@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="CSS/Logo.css">
+    <link rel="stylesheet" href="CSS/Basic1.css" />
+    <link rel="stylesheet" href="CSS/Basic2.css" />
+    <link rel="stylesheet" href="CSS/Infinite.css" />
+    <link rel="stylesheet" href="CSS/Slides1.css" />
+    <link rel="stylesheet" href="CSS/Slides2.css" />
+    <link rel="stylesheet" href="CSS/Slides3.css" />
+    <link rel="stylesheet" href="CSS/Gentle.css" />
+    <link rel="stylesheet" href="CSS/Circular.css" />
+    <link rel="stylesheet" href="CSS/Rotating.css" />
+    <link rel="stylesheet" href="CSS/ImageSlider.css" />
+    <link rel="stylesheet" href="CSS/Photos.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="CSS/Swiper1.css" />
+    <link rel="stylesheet" href="CSS/Swiper2.css" />
+    
+
+<style>
+
+html {
+-webkit-tap-highlight-color: transparent;
+scroll-behavior:smooth;}
+
+body{
+margin:0;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+background:#051B34;}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;}
+
+.title{
+position: absolute;
+bottom:-30px;
+text-align:left;
+left:10px;
+font-family: "Montserrat Alternates", serif;
+font-style: normal;
+font-weight:600;
+font-size:0.85rem;
+color:transparent;
+background:linear-gradient(#00FFFF,#00FF9F);
+-webkit-background-clip:text;
+text-shadow:0 1px 5px rgba(51,255,255,0.5);}
+
+.show .Container{
+position:absolute;
+top:190px;
+width:100vw;
+height:auto;
+display:none;
+justify-content:center;
+margin-top:40px;
+overflow:hidden;}
+
+.show .Design{
+position:relative;
+display:flex;
+justify-content:center;
+align-items:center;
+width:330px;
+height:330px;
+border-radius:20px;
+cursor:pointer;
+pointer-events:auto;}
+
+.show .container{
+position: absolute;
+display:flex;
+justify-content:center;
+align-items:center;
+width:330px;
+height:330px;
+border-radius:20px;
+overflow:hidden;
+pointer-events:auto;}
+
+.show a{
+position:absolute;
+display:flex;
+justify-content:center;
+align-items:center;
+width:330px;
+height:330px;
+border-radius:20px;
+overflow:hidden;
+color: inherit; 
+text-decoration: none !important;}
+
+.container1, .container2, .container3, .container5, .container6, .container7, .container8, .container9, .container10, .container11, .container12 {
+font-family: Arial, Helvetica, sans-serif !important;}
+
+@media screen and (max-width: 650px) {
+
+.show .Container{
+grid-template-columns:repeat(1,330px);
+gap:80px;}
+
+.show .Design{
+transform:scale(1);}
+
+}
+
+@media screen and (min-width: 650px) {
+
+.show .Container{
+grid-template-columns:repeat(2,330px);
+gap:40px;}
+
+.show .Design{
+transform:scale(0.8);}
+
+}
+
+@media screen and (min-width: 900px) {
+
+.show .Container{
+grid-template-columns:repeat(3,330px);
+gap:40px;}
+
+.show .Design{
+transform:scale(0.8);}
+
+}
+
+
+</style>
+
+<body>
+
+<!--  logo -->
+
+<div id="container" class="logo-container">
+
+<div id="logo" class="logo">
+
+<div id="light"></div>
+
+<h1 id="F">F</h1>
+<h1 id="cus">cus</h1>
+
+<div id="focus">
+
+<svg id="backside" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.87038 2.92843C4.70826 1.05339 7.20095 0 9.8001 0V0.00339792H15V20H9.79996V19.9966C7.20086 19.9966 4.70822 18.9432 2.87038 17.0682C1.03251 15.1931 0 12.65 0 9.9983C0 7.34659 1.03251 4.80348 2.87038 2.92843Z" fill="#00FFFF"/>
+<rect id="hide" x="15" width="0" height="20" fill="#051B34" style="transition:0.4s;"/>
+</svg>    
+
+
+<div id="glass"></div>
+
+<div id="glow"></div>
+
+<svg id="shine" class="shine" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.4538 13.3344C15.1039 13.9067 14.6661 14.4204 14.1565 14.8565" stroke="#00FFFF" stroke-width="1.4" stroke-linecap="round"/>
+<path d="M8.02436 3.91521C8.98377 3.60348 10.0033 3.52324 10.9997 3.68104C11.9961 3.83885 12.9409 4.23023 13.7571 4.82318C14.5732 5.41612 15.2374 6.1938 15.6954 7.09264C16.1533 7.99147 16.3921 8.98593 16.3921 9.99471" stroke="#00FFFF" stroke-width="1.4" stroke-linecap="round"/>
+</svg>
+
+</div>
+
+</div>
+
+<button id="Button">
+<div class="background"></div>
+<span>See More</span>
+</button>
+
+<div style="width:100vw;height:300px;position:absolute;top:1300px;background:red;"></div>
+
+</div>
+
+<div id="show" class="show">
+
+<div class="layer"></div>
+
+<svg id="Back" class="back" width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17 22L12 17L17 12M12.6944 17H22.8333" stroke="#051B34" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+<nav id="Nav">
+<div class="background"></div>
+
+<section>
+<span class="active">Carousel</span>
+<span>Bottom Navbar</span>
+<span>Side Navbar</span>
+<span>Home Page</span>
+</section>
+
+</nav>
+
+
+<ul class="Container active">
+
+<!-- carousel 1-->
+<li class="container1 Design">
+
+<a href="Basic1.html" target="_blank">
+
+<section class="container">
+
+    <div class="wrapper">
+
+        <ul class="carousel">
+        
+        <li id="1" class="slide">
+        <div class="card">
+        <img class="img" src="Hotels/hotel1.jpg" loading="lazy" alt="" draggable="false">
+        <div class="section">
+        
+        <h2>Park Central Hotel</h2>
+        
+        <img class="Location" src="SVG/Manhattan.svg">
+        
+        <section class="Price">
+        <span class="price">$5000</span><span class="night">/night</span>
+        </section>
+        
+        <section class="Ratings">
+        <i class="fa-solid  fas fa-star"></i><span class="rating">4.9</span>
+        </section>
+        
+        </div>
+        </div>
+        </li>
+        
+        <li id="2" class="slide">
+        <div class="card">
+        <img class="img" src="Hotels/hotel2.jpg" loading="lazy" alt="" draggable="false">
+        <div class="section">
+        
+        <h2>The Empire Hotel</h2>
+        
+        <img class="Location" src="SVG/Manhattan.svg">
+        
+        <section class="Price">
+        <span class="price">$2000</span><span class="night">/night</span>
+        </section>
+        
+        <section class="Ratings">
+        <i class="fa-solid  fas fa-star"></i><span class="rating">4.5</span>
+        </section>
+        
+        </div>
+        </div>
+        </li>
+        
+        <li id="3" class="slide">
+        <div class="card">
+        <img class="img" src="Hotels/hotel3.jpg" loading="lazy" alt="" draggable="false">
+        <div class="section">
+        
+        <h2>City Club Hotel</h2>
+        
+        <img class="Location" src="SVG/Manhattan.svg">
+        
+        <section class="Price">
+        <span class="price">$2100</span><span class="night">/night</span>
+        </section>
+        
+        <section class="Ratings">
+        <i class="fa-solid  fas fa-star"></i><span class="rating">4.8</span>
+        </section>
+        
+        </div>
+        </div>
+        </li>
+        
+        <li id="4" class="slide">
+        <div class="card">
+        <img class="img" src="Hotels/hotel4.jpg" loading="lazy" alt="" draggable="false">
+        <div class="section">
+        
+        <h2>Hotel Scherman</h2>
+        
+        <img class="Location" src="SVG/Midtown.svg">
+        
+        <section class="Price">
+        <span class="price">$4200</span><span class="night">/night</span>
+        </section>
+        
+        <section class="Ratings">
+        <i class="fa-solid  fas fa-star"></i><span class="rating">4.5</span>
+        </section>
+        
+        </div>
+        </div>
+        </li>
+        
+        <li id="5" class="slide">
+        <div class="card">
+        <img class="img" src="Hotels/hotel5.jpg" loading="lazy" alt="" draggable="false">
+        <div class="section">
+        
+        <h2>West Side YMCA</h2>
+        
+        <img class="Location" src="SVG/Manhattan.svg">
+        
+        <section class="Price">
+        <span class="price">$2500</span><span class="night">/night</span>
+        </section>
+        
+        <section class="Ratings">
+        <i class="fa-solid  fas fa-star"></i><span class="rating">4.9</span>
+        </section>
+        
+        </div>
+        </div>
+        </li>
+        
+        <li id="6" class="slide">
+        <div class="card">
+        <img class="img" src="Hotels/hotel6.jpg" loading="lazy" alt="" draggable="false">
+        <div class="section">
+        
+        <h2>Riverside Tower</h2>
+        
+        <img class="Location" src="SVG/Upper.svg">
+        
+        <section class="Price">
+        <span class="price">$3000</span><span class="night">/night</span>
+        </section>
+        
+        <section class="Ratings">
+        <i class="fa-solid  fas fa-star"></i><span class="rating">4.8</span>
+        </section>
+        
+        </div>
+        </div>
+        </li>
+        
+        <li id="7" class="slide">
+        <div class="card">
+        <img class="img" src="Hotels/hotel7.jpg" loading="lazy" alt="" draggable="false">
+        <div class="section">
+        
+        <h2>Gansevoort Hotel</h2>
+
+        <img class="Location" src="SVG/Greenwich.svg">
+        
+        <section class="Price">
+        <span class="price">$1800</span><span class="night">/night</span>
+        </section>
+        
+        <section class="Ratings">
+        <i class="fa-solid  fas fa-star"></i><span class="rating">4.7</span>
+        </section>
+        
+        </div>
+        </div>
+        </li>
+        
+        <li id="8" class="slide">
+        <div class="card">
+        <img class="img" src="Hotels/hotel8.jpg" loading="lazy" alt="" draggable="false">
+        <div class="section">
+        
+        <h2>Royalton Hotel</h2>
+        
+        <img class="Location" src="SVG/Manhattan.svg">
+        
+        <section class="Price">
+        <span class="price">$1200</span><span class="night">/night</span>
+        </section>
+        
+        <section class="Ratings">
+        <i class="fa-solid  fas fa-star"></i><span class="rating">4.5</span>
+        </section>
+        
+        </div>
+        </div>
+        </li>
+        
+        </ul>
+        
+        <div class="indicator">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        </div>
+        
+        
+        <div class="arrows">
+        
+        <svg class="arrow" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M26.3697 30.7955C26.5107 30.6545 26.5898 30.4633 26.5898 30.264C26.5898 30.0646 26.5107 29.8735 26.3697 29.7325L22.6483 26.0111L26.3697 22.2897C26.5067 22.1479 26.5825 21.958 26.5807 21.7609C26.579 21.5638 26.5 21.3752 26.3606 21.2358C26.2212 21.0964 26.0326 21.0174 25.8355 21.0157C25.6384 21.0139 25.4485 21.0897 25.3067 21.2267L21.0538 25.4796C20.9129 25.6205 20.8337 25.8117 20.8337 26.0111C20.8337 26.2104 20.9129 26.4016 21.0538 26.5426L25.3067 30.7955C25.4477 30.9364 25.6389 31.0156 25.8382 31.0156C26.0376 31.0156 26.2287 30.9364 26.3697 30.7955Z" fill="black" stroke="black" stroke-width="1.66667"/>
+        </svg>
+        
+        <svg class="arrow" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M23.6303 30.7955C23.4893 30.6545 23.4102 30.4633 23.4102 30.264C23.4102 30.0646 23.4893 29.8735 23.6303 29.7325L27.3517 26.0111L23.6303 22.2897C23.4933 22.1479 23.4175 21.958 23.4193 21.7609C23.421 21.5638 23.5 21.3752 23.6394 21.2358C23.7788 21.0964 23.9674 21.0174 24.1645 21.0157C24.3616 21.0139 24.5515 21.0897 24.6933 21.2267L28.9462 25.4796C29.0871 25.6205 29.1663 25.8117 29.1663 26.0111C29.1663 26.2104 29.0871 26.4016 28.9462 26.5426L24.6933 30.7955C24.5523 30.9364 24.3611 31.0156 24.1618 31.0156C23.9624 31.0156 23.7713 30.9364 23.6303 30.7955Z" fill="black" stroke="black" stroke-width="1.66667"/>
+        </svg>
+        
+        </div>
+        
+        </div>
+        
+
+</section>
+
+</a>
+
+<span class="title">Basic Carousel - Style 1</span>
+
+</li>
+
+
+
+<!-- carousel 2-->
+<li class="container2 Design">
+
+<a href="Basic2.html" target="_blank">
+
+<section class="container">
+
+        <div class="wrapper">
+        
+        <ul class="carousel">
+        
+        <li class="card">
+        <div class="img"><img src="Profiles/person1.jpg" loading="lazy" alt="" draggable="false"></div>
+        
+        <section class="name">
+        <h2 style="color: black; font-weight:bold;">Mark E.</h2>
+        
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M13.1163 5.42625C12.8806 5.18 12.6369 4.92625 12.545 4.70312C12.46 4.49875 12.455 4.16 12.45 3.83187C12.4406 3.22187 12.4306 2.53062 11.95 2.05C11.4694 1.56937 10.7781 1.55937 10.1681 1.55C9.84 1.545 9.50125 1.54 9.29688 1.455C9.07438 1.36312 8.82 1.11937 8.57375 0.88375C8.1425 0.469375 7.6525 0 7 0C6.3475 0 5.85812 0.469375 5.42625 0.88375C5.18 1.11937 4.92625 1.36312 4.70312 1.455C4.5 1.54 4.16 1.545 3.83187 1.55C3.22187 1.55937 2.53062 1.56937 2.05 2.05C1.56937 2.53062 1.5625 3.22187 1.55 3.83187C1.545 4.16 1.54 4.49875 1.455 4.70312C1.36312 4.92562 1.11937 5.18 0.88375 5.42625C0.469375 5.8575 0 6.3475 0 7C0 7.6525 0.469375 8.14187 0.88375 8.57375C1.11937 8.82 1.36312 9.07375 1.455 9.29688C1.54 9.50125 1.545 9.84 1.55 10.1681C1.55937 10.7781 1.56937 11.4694 2.05 11.95C2.53062 12.4306 3.22187 12.4406 3.83187 12.45C4.16 12.455 4.49875 12.46 4.70312 12.545C4.92562 12.6369 5.18 12.8806 5.42625 13.1163C5.8575 13.5306 6.3475 14 7 14C7.6525 14 8.14187 13.5306 8.57375 13.1163C8.82 12.8806 9.07375 12.6369 9.29688 12.545C9.50125 12.46 9.84 12.455 10.1681 12.45C10.7781 12.4406 11.4694 12.4306 11.95 11.95C12.4306 11.4694 12.4406 10.7781 12.45 10.1681C12.455 9.84 12.46 9.50125 12.545 9.29688C12.6369 9.07438 12.8806 8.82 13.1163 8.57375C13.5306 8.1425 14 7.6525 14 7C14 6.3475 13.5306 5.85812 13.1163 5.42625ZM9.85375 5.85375L6.35375 9.35375C6.30731 9.40024 6.25217 9.43712 6.19147 9.46228C6.13077 9.48744 6.06571 9.50039 6 9.50039C5.93429 9.50039 5.86923 9.48744 5.80853 9.46228C5.74783 9.43712 5.69269 9.40024 5.64625 9.35375L4.14625 7.85375C4.09979 7.8073 4.06294 7.75214 4.0378 7.69145C4.01266 7.63075 3.99972 7.5657 3.99972 7.5C3.99972 7.4343 4.01266 7.36925 4.0378 7.30855C4.06294 7.24786 4.09979 7.1927 4.14625 7.14625C4.24007 7.05243 4.36732 6.99972 4.5 6.99972C4.5657 6.99972 4.63075 7.01266 4.69145 7.0378C4.75214 7.06294 4.8073 7.09979 4.85375 7.14625L6 8.29313L9.14625 5.14625C9.19271 5.09979 9.24786 5.06294 9.30855 5.0378C9.36925 5.01266 9.4343 4.99972 9.5 4.99972C9.5657 4.99972 9.63075 5.01266 9.69145 5.0378C9.75214 5.06294 9.80729 5.09979 9.85375 5.14625C9.90021 5.1927 9.93705 5.24786 9.9622 5.30855C9.98734 5.36925 10.0003 5.4343 10.0003 5.5C10.0003 5.5657 9.98734 5.63075 9.9622 5.69145C9.93705 5.75214 9.90021 5.8073 9.85375 5.85375Z" fill="black"/>
+        <path d="M9.85375 5.85375L6.35375 9.35375C6.30731 9.40024 6.25217 9.43712 6.19147 9.46228C6.13077 9.48744 6.06571 9.50039 6 9.50039C5.93429 9.50039 5.86923 9.48744 5.80853 9.46228C5.74783 9.43712 5.69269 9.40024 5.64625 9.35375L4.14625 7.85375C4.09979 7.8073 4.06294 7.75214 4.0378 7.69145C4.01266 7.63075 3.99972 7.5657 3.99972 7.5C3.99972 7.4343 4.01266 7.36925 4.0378 7.30855C4.06294 7.24786 4.09979 7.1927 4.14625 7.14625C4.24007 7.05243 4.36732 6.99972 4.5 6.99972C4.5657 6.99972 4.63075 7.01266 4.69145 7.0378C4.75214 7.06294 4.8073 7.09979 4.85375 7.14625L6 8.29313L9.14625 5.14625C9.19271 5.09979 9.24786 5.06294 9.30855 5.0378C9.36925 5.01266 9.4343 4.99972 9.5 4.99972C9.5657 4.99972 9.63075 5.01266 9.69145 5.0378C9.75214 5.06294 9.80729 5.09979 9.85375 5.14625C9.90021 5.1927 9.93705 5.24786 9.9622 5.30855C9.98734 5.36925 10.0003 5.4343 10.0003 5.5C10.0003 5.5657 9.98734 5.63075 9.9622 5.69145C9.93705 5.75214 9.90021 5.8073 9.85375 5.85375Z" fill="white"/>
+        </svg>
+        
+        </section>
+        
+        <span>Front-End Developer</span>
+        </li>
+        
+        <li class="card">
+        <div class="img"><img src="Profiles/person2.jpg" loading="lazy" alt="" draggable="false"></div>               
+        
+        <section class="name">
+        <h2 style="color: black; font-weight:bold;">Kevin P.</h2>
+        
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M13.1163 5.42625C12.8806 5.18 12.6369 4.92625 12.545 4.70312C12.46 4.49875 12.455 4.16 12.45 3.83187C12.4406 3.22187 12.4306 2.53062 11.95 2.05C11.4694 1.56937 10.7781 1.55937 10.1681 1.55C9.84 1.545 9.50125 1.54 9.29688 1.455C9.07438 1.36312 8.82 1.11937 8.57375 0.88375C8.1425 0.469375 7.6525 0 7 0C6.3475 0 5.85812 0.469375 5.42625 0.88375C5.18 1.11937 4.92625 1.36312 4.70312 1.455C4.5 1.54 4.16 1.545 3.83187 1.55C3.22187 1.55937 2.53062 1.56937 2.05 2.05C1.56937 2.53062 1.5625 3.22187 1.55 3.83187C1.545 4.16 1.54 4.49875 1.455 4.70312C1.36312 4.92562 1.11937 5.18 0.88375 5.42625C0.469375 5.8575 0 6.3475 0 7C0 7.6525 0.469375 8.14187 0.88375 8.57375C1.11937 8.82 1.36312 9.07375 1.455 9.29688C1.54 9.50125 1.545 9.84 1.55 10.1681C1.55937 10.7781 1.56937 11.4694 2.05 11.95C2.53062 12.4306 3.22187 12.4406 3.83187 12.45C4.16 12.455 4.49875 12.46 4.70312 12.545C4.92562 12.6369 5.18 12.8806 5.42625 13.1163C5.8575 13.5306 6.3475 14 7 14C7.6525 14 8.14187 13.5306 8.57375 13.1163C8.82 12.8806 9.07375 12.6369 9.29688 12.545C9.50125 12.46 9.84 12.455 10.1681 12.45C10.7781 12.4406 11.4694 12.4306 11.95 11.95C12.4306 11.4694 12.4406 10.7781 12.45 10.1681C12.455 9.84 12.46 9.50125 12.545 9.29688C12.6369 9.07438 12.8806 8.82 13.1163 8.57375C13.5306 8.1425 14 7.6525 14 7C14 6.3475 13.5306 5.85812 13.1163 5.42625ZM9.85375 5.85375L6.35375 9.35375C6.30731 9.40024 6.25217 9.43712 6.19147 9.46228C6.13077 9.48744 6.06571 9.50039 6 9.50039C5.93429 9.50039 5.86923 9.48744 5.80853 9.46228C5.74783 9.43712 5.69269 9.40024 5.64625 9.35375L4.14625 7.85375C4.09979 7.8073 4.06294 7.75214 4.0378 7.69145C4.01266 7.63075 3.99972 7.5657 3.99972 7.5C3.99972 7.4343 4.01266 7.36925 4.0378 7.30855C4.06294 7.24786 4.09979 7.1927 4.14625 7.14625C4.24007 7.05243 4.36732 6.99972 4.5 6.99972C4.5657 6.99972 4.63075 7.01266 4.69145 7.0378C4.75214 7.06294 4.8073 7.09979 4.85375 7.14625L6 8.29313L9.14625 5.14625C9.19271 5.09979 9.24786 5.06294 9.30855 5.0378C9.36925 5.01266 9.4343 4.99972 9.5 4.99972C9.5657 4.99972 9.63075 5.01266 9.69145 5.0378C9.75214 5.06294 9.80729 5.09979 9.85375 5.14625C9.90021 5.1927 9.93705 5.24786 9.9622 5.30855C9.98734 5.36925 10.0003 5.4343 10.0003 5.5C10.0003 5.5657 9.98734 5.63075 9.9622 5.69145C9.93705 5.75214 9.90021 5.8073 9.85375 5.85375Z" fill="black"/>
+        <path d="M9.85375 5.85375L6.35375 9.35375C6.30731 9.40024 6.25217 9.43712 6.19147 9.46228C6.13077 9.48744 6.06571 9.50039 6 9.50039C5.93429 9.50039 5.86923 9.48744 5.80853 9.46228C5.74783 9.43712 5.69269 9.40024 5.64625 9.35375L4.14625 7.85375C4.09979 7.8073 4.06294 7.75214 4.0378 7.69145C4.01266 7.63075 3.99972 7.5657 3.99972 7.5C3.99972 7.4343 4.01266 7.36925 4.0378 7.30855C4.06294 7.24786 4.09979 7.1927 4.14625 7.14625C4.24007 7.05243 4.36732 6.99972 4.5 6.99972C4.5657 6.99972 4.63075 7.01266 4.69145 7.0378C4.75214 7.06294 4.8073 7.09979 4.85375 7.14625L6 8.29313L9.14625 5.14625C9.19271 5.09979 9.24786 5.06294 9.30855 5.0378C9.36925 5.01266 9.4343 4.99972 9.5 4.99972C9.5657 4.99972 9.63075 5.01266 9.69145 5.0378C9.75214 5.06294 9.80729 5.09979 9.85375 5.14625C9.90021 5.1927 9.93705 5.24786 9.9622 5.30855C9.98734 5.36925 10.0003 5.4343 10.0003 5.5C10.0003 5.5657 9.98734 5.63075 9.9622 5.69145C9.93705 5.75214 9.90021 5.8073 9.85375 5.85375Z" fill="white"/>
+        </svg>
+        
+        </section>
+        
+        <span>Full-Stack Developer</span>
+        </li>
+        
+        <li class="card">
+        <div class="img"><img src="Profiles/person3.jpg" loading="lazy" alt="" draggable="false"></div>               
+        
+        <section class="name">
+        <h2 style="color: black; font-weight:bold;">Samantha L.</h2>
+        
+        </section>
+        
+        <span>UI/UX Designer</span>           
+        </li>
+        
+        <li class="card">
+        <div class="img"><img src="Profiles/person4.jpg" loading="lazy" alt="" draggable="false"></div>               
+        
+        <section class="name">
+        <h2 style="color: black; font-weight:bold;">Parker U.</h2>
+        
+        </section>
+        
+        <span>React.js Developer</span>           
+        </li>
+        
+        <li class="card">
+        <div class="img"><img src="Profiles/person5.jpg" loading="lazy" alt="" draggable="false"></div>               
+        
+        <section class="name">
+        <h2 style="color: black; font-weight:bold;">Emma S.</h2>
+        
+        </section>
+        
+        <span>JavaScript Developer</span>           
+        </li>
+        
+        <li class="card">
+        <div class="img"><img src="Profiles/person6.jpg" loading="lazy" alt="" draggable="false"></div>               
+        
+        <section class="name">
+        <h2 style="color: black; font-weight:bold;">Talia G.</h2>
+        
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M13.1163 5.42625C12.8806 5.18 12.6369 4.92625 12.545 4.70312C12.46 4.49875 12.455 4.16 12.45 3.83187C12.4406 3.22187 12.4306 2.53062 11.95 2.05C11.4694 1.56937 10.7781 1.55937 10.1681 1.55C9.84 1.545 9.50125 1.54 9.29688 1.455C9.07438 1.36312 8.82 1.11937 8.57375 0.88375C8.1425 0.469375 7.6525 0 7 0C6.3475 0 5.85812 0.469375 5.42625 0.88375C5.18 1.11937 4.92625 1.36312 4.70312 1.455C4.5 1.54 4.16 1.545 3.83187 1.55C3.22187 1.55937 2.53062 1.56937 2.05 2.05C1.56937 2.53062 1.5625 3.22187 1.55 3.83187C1.545 4.16 1.54 4.49875 1.455 4.70312C1.36312 4.92562 1.11937 5.18 0.88375 5.42625C0.469375 5.8575 0 6.3475 0 7C0 7.6525 0.469375 8.14187 0.88375 8.57375C1.11937 8.82 1.36312 9.07375 1.455 9.29688C1.54 9.50125 1.545 9.84 1.55 10.1681C1.55937 10.7781 1.56937 11.4694 2.05 11.95C2.53062 12.4306 3.22187 12.4406 3.83187 12.45C4.16 12.455 4.49875 12.46 4.70312 12.545C4.92562 12.6369 5.18 12.8806 5.42625 13.1163C5.8575 13.5306 6.3475 14 7 14C7.6525 14 8.14187 13.5306 8.57375 13.1163C8.82 12.8806 9.07375 12.6369 9.29688 12.545C9.50125 12.46 9.84 12.455 10.1681 12.45C10.7781 12.4406 11.4694 12.4306 11.95 11.95C12.4306 11.4694 12.4406 10.7781 12.45 10.1681C12.455 9.84 12.46 9.50125 12.545 9.29688C12.6369 9.07438 12.8806 8.82 13.1163 8.57375C13.5306 8.1425 14 7.6525 14 7C14 6.3475 13.5306 5.85812 13.1163 5.42625ZM9.85375 5.85375L6.35375 9.35375C6.30731 9.40024 6.25217 9.43712 6.19147 9.46228C6.13077 9.48744 6.06571 9.50039 6 9.50039C5.93429 9.50039 5.86923 9.48744 5.80853 9.46228C5.74783 9.43712 5.69269 9.40024 5.64625 9.35375L4.14625 7.85375C4.09979 7.8073 4.06294 7.75214 4.0378 7.69145C4.01266 7.63075 3.99972 7.5657 3.99972 7.5C3.99972 7.4343 4.01266 7.36925 4.0378 7.30855C4.06294 7.24786 4.09979 7.1927 4.14625 7.14625C4.24007 7.05243 4.36732 6.99972 4.5 6.99972C4.5657 6.99972 4.63075 7.01266 4.69145 7.0378C4.75214 7.06294 4.8073 7.09979 4.85375 7.14625L6 8.29313L9.14625 5.14625C9.19271 5.09979 9.24786 5.06294 9.30855 5.0378C9.36925 5.01266 9.4343 4.99972 9.5 4.99972C9.5657 4.99972 9.63075 5.01266 9.69145 5.0378C9.75214 5.06294 9.80729 5.09979 9.85375 5.14625C9.90021 5.1927 9.93705 5.24786 9.9622 5.30855C9.98734 5.36925 10.0003 5.4343 10.0003 5.5C10.0003 5.5657 9.98734 5.63075 9.9622 5.69145C9.93705 5.75214 9.90021 5.8073 9.85375 5.85375Z" fill="black"/>
+        <path d="M9.85375 5.85375L6.35375 9.35375C6.30731 9.40024 6.25217 9.43712 6.19147 9.46228C6.13077 9.48744 6.06571 9.50039 6 9.50039C5.93429 9.50039 5.86923 9.48744 5.80853 9.46228C5.74783 9.43712 5.69269 9.40024 5.64625 9.35375L4.14625 7.85375C4.09979 7.8073 4.06294 7.75214 4.0378 7.69145C4.01266 7.63075 3.99972 7.5657 3.99972 7.5C3.99972 7.4343 4.01266 7.36925 4.0378 7.30855C4.06294 7.24786 4.09979 7.1927 4.14625 7.14625C4.24007 7.05243 4.36732 6.99972 4.5 6.99972C4.5657 6.99972 4.63075 7.01266 4.69145 7.0378C4.75214 7.06294 4.8073 7.09979 4.85375 7.14625L6 8.29313L9.14625 5.14625C9.19271 5.09979 9.24786 5.06294 9.30855 5.0378C9.36925 5.01266 9.4343 4.99972 9.5 4.99972C9.5657 4.99972 9.63075 5.01266 9.69145 5.0378C9.75214 5.06294 9.80729 5.09979 9.85375 5.14625C9.90021 5.1927 9.93705 5.24786 9.9622 5.30855C9.98734 5.36925 10.0003 5.4343 10.0003 5.5C10.0003 5.5657 9.98734 5.63075 9.9622 5.69145C9.93705 5.75214 9.90021 5.8073 9.85375 5.85375Z" fill="white"/>
+        </svg>
+        
+        </section>
+        
+        <span>UI/UX Designer</span>           
+        </li>
+        
+        <li class="card">
+        <div class="img"><img src="Profiles/person7.jpg" loading="lazy" alt="" draggable="false"></div>               
+        
+        <section class="name">
+        <h2 style="color: black; font-weight:bold;">Dany H.</h2>
+        
+        </section>
+        
+        <span>Back-End Developer</span>           
+        </li>
+        
+        <li class="card">
+        <div class="img"><img src="Profiles/person8.jpg" loading="lazy" alt="" draggable="false"> </div>               
+        
+        <section class="name">
+        <h2 style="color: black; font-weight:bold;">Sally M.</h2>
+        
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M13.1163 5.42625C12.8806 5.18 12.6369 4.92625 12.545 4.70312C12.46 4.49875 12.455 4.16 12.45 3.83187C12.4406 3.22187 12.4306 2.53062 11.95 2.05C11.4694 1.56937 10.7781 1.55937 10.1681 1.55C9.84 1.545 9.50125 1.54 9.29688 1.455C9.07438 1.36312 8.82 1.11937 8.57375 0.88375C8.1425 0.469375 7.6525 0 7 0C6.3475 0 5.85812 0.469375 5.42625 0.88375C5.18 1.11937 4.92625 1.36312 4.70312 1.455C4.5 1.54 4.16 1.545 3.83187 1.55C3.22187 1.55937 2.53062 1.56937 2.05 2.05C1.56937 2.53062 1.5625 3.22187 1.55 3.83187C1.545 4.16 1.54 4.49875 1.455 4.70312C1.36312 4.92562 1.11937 5.18 0.88375 5.42625C0.469375 5.8575 0 6.3475 0 7C0 7.6525 0.469375 8.14187 0.88375 8.57375C1.11937 8.82 1.36312 9.07375 1.455 9.29688C1.54 9.50125 1.545 9.84 1.55 10.1681C1.55937 10.7781 1.56937 11.4694 2.05 11.95C2.53062 12.4306 3.22187 12.4406 3.83187 12.45C4.16 12.455 4.49875 12.46 4.70312 12.545C4.92562 12.6369 5.18 12.8806 5.42625 13.1163C5.8575 13.5306 6.3475 14 7 14C7.6525 14 8.14187 13.5306 8.57375 13.1163C8.82 12.8806 9.07375 12.6369 9.29688 12.545C9.50125 12.46 9.84 12.455 10.1681 12.45C10.7781 12.4406 11.4694 12.4306 11.95 11.95C12.4306 11.4694 12.4406 10.7781 12.45 10.1681C12.455 9.84 12.46 9.50125 12.545 9.29688C12.6369 9.07438 12.8806 8.82 13.1163 8.57375C13.5306 8.1425 14 7.6525 14 7C14 6.3475 13.5306 5.85812 13.1163 5.42625ZM9.85375 5.85375L6.35375 9.35375C6.30731 9.40024 6.25217 9.43712 6.19147 9.46228C6.13077 9.48744 6.06571 9.50039 6 9.50039C5.93429 9.50039 5.86923 9.48744 5.80853 9.46228C5.74783 9.43712 5.69269 9.40024 5.64625 9.35375L4.14625 7.85375C4.09979 7.8073 4.06294 7.75214 4.0378 7.69145C4.01266 7.63075 3.99972 7.5657 3.99972 7.5C3.99972 7.4343 4.01266 7.36925 4.0378 7.30855C4.06294 7.24786 4.09979 7.1927 4.14625 7.14625C4.24007 7.05243 4.36732 6.99972 4.5 6.99972C4.5657 6.99972 4.63075 7.01266 4.69145 7.0378C4.75214 7.06294 4.8073 7.09979 4.85375 7.14625L6 8.29313L9.14625 5.14625C9.19271 5.09979 9.24786 5.06294 9.30855 5.0378C9.36925 5.01266 9.4343 4.99972 9.5 4.99972C9.5657 4.99972 9.63075 5.01266 9.69145 5.0378C9.75214 5.06294 9.80729 5.09979 9.85375 5.14625C9.90021 5.1927 9.93705 5.24786 9.9622 5.30855C9.98734 5.36925 10.0003 5.4343 10.0003 5.5C10.0003 5.5657 9.98734 5.63075 9.9622 5.69145C9.93705 5.75214 9.90021 5.8073 9.85375 5.85375Z" fill="black"/>
+        <path d="M9.85375 5.85375L6.35375 9.35375C6.30731 9.40024 6.25217 9.43712 6.19147 9.46228C6.13077 9.48744 6.06571 9.50039 6 9.50039C5.93429 9.50039 5.86923 9.48744 5.80853 9.46228C5.74783 9.43712 5.69269 9.40024 5.64625 9.35375L4.14625 7.85375C4.09979 7.8073 4.06294 7.75214 4.0378 7.69145C4.01266 7.63075 3.99972 7.5657 3.99972 7.5C3.99972 7.4343 4.01266 7.36925 4.0378 7.30855C4.06294 7.24786 4.09979 7.1927 4.14625 7.14625C4.24007 7.05243 4.36732 6.99972 4.5 6.99972C4.5657 6.99972 4.63075 7.01266 4.69145 7.0378C4.75214 7.06294 4.8073 7.09979 4.85375 7.14625L6 8.29313L9.14625 5.14625C9.19271 5.09979 9.24786 5.06294 9.30855 5.0378C9.36925 5.01266 9.4343 4.99972 9.5 4.99972C9.5657 4.99972 9.63075 5.01266 9.69145 5.0378C9.75214 5.06294 9.80729 5.09979 9.85375 5.14625C9.90021 5.1927 9.93705 5.24786 9.9622 5.30855C9.98734 5.36925 10.0003 5.4343 10.0003 5.5C10.0003 5.5657 9.98734 5.63075 9.9622 5.69145C9.93705 5.75214 9.90021 5.8073 9.85375 5.85375Z" fill="white"/>
+        </svg>
+        
+        </section>
+        
+        <span>Front-End Developer</span>           
+        </li>
+                 
+        </ul>
+              
+        <div class="indicator">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        </div>
+        
+        </div>
+        
+
+
+</section>
+
+</a>
+
+<span class="title">Basic Carousel - Style 2</span>
+
+</li>
+
+
+
+
+<!-- carousel 3-->
+<li class="container3 Design">
+
+<a href="Infinite.html" target="_blank">
+
+<section class="container">
+
+    <div class="infinite">
+
+        <section id="carousel1" class="carousel">
+        
+        <ul>
+        
+        <li class="card">
+        <img src="Films/slide1.jpeg" loading="lazy" alt="" draggable="false">
+        </li>
+        
+        <li class="card">
+        <img src="Films/slide2.jpg" loading="lazy" alt="" draggable="false">
+        </li>
+        
+        <li class="card">
+        <img src="Films/slide3.jpg" loading="lazy" alt="" draggable="false">
+        </li>
+        
+        <li class="card">
+        <img src="Films/slide4.jpg" loading="lazy" alt="" draggable="false">
+        </li>
+        
+        <li class="card">
+        <img src="Films/slide5.jpg" loading="lazy" alt="" draggable="false">
+        </li>
+        
+        <li class="card">
+        <img src="Films/slide6.jpg" loading="lazy" alt="" draggable="false">
+        </li>
+        
+        <li class="card">
+        <img src="Films/slide7.jpg" loading="lazy" alt="" draggable="false">
+        </li>
+        
+        <li class="card">
+        <img src="Films/slide8.jpg" loading="lazy" alt="" draggable="false">
+        </li>
+        
+        </ul>
+        
+        </section>
+        
+        <section id="carousel2" class="carousel">
+        
+        <ul>
+        
+        <li class="card">
+        <img src="Films/slide9.jpg" loading="lazy" alt="" draggable="false">
+        </li>
+        
+        <li class="card">
+        <img src="Films/slide10.jpg" loading="lazy" alt="" draggable="false">
+        </li>
+        
+        <li class="card">
+        <img src="Films/slide11.jpg" loading="lazy" alt="" draggable="false">
+        </li>
+        
+        <li class="card">
+        <img src="Films/slide12.jpg" loading="lazy" alt="" draggable="false">
+        </li>
+        
+        <li class="card">
+        <img src="Films/slide13.jpg" loading="lazy" alt="" draggable="false">
+        </li>
+        
+        <li class="card">
+        <img src="Films/slide14.jpg" loading="lazy" alt="" draggable="false">
+        </li>
+        
+        <li class="card">
+        <img src="Films/slide15.jpg" loading="lazy" alt="" draggable="false">
+        </li>
+        
+        <li class="card">
+        <img src="Films/slide16.jpg" loading="lazy" alt="" draggable="false">
+        </li>
+        
+        </ul>
+        
+        </section>
+        
+        
+        </div>
+
+</section>
+
+</a>
+
+<span class="title">Infinite Carousel</span>
+
+</li>
+
+
+
+<!-- carousel 4-->
+<li class="container4 Design">
+
+<a href="Slides1.html" target="_blank">
+
+<section class="container">
+
+
+
+    <div class="wrapper">
+
+        <ul class="carousel">
+        
+        <li class="card active" style="background-image:url('Flowers/flowers1.jpg');">
+        <h2>White Gerberas</h2>   
+        <h3>$28.99</h3>   
+        </li>
+        
+        <li class="card" style="background-image:url('Flowers/flowers2.jpeg');">
+        <h2>Orange Roses</h2>   
+        <h3>$19.5</h3>                   
+        </li>
+        
+        <li class="card" style="background-image:url('Flowers/flowers3.jpg');">
+        <h2>Sunflowers</h2>   
+        <h3>$15.8</h3>
+        </li>
+        
+        <li class="card" style="background-image:url('Flowers/flowers4.jpg');">
+        <h2>Pink Roses</h2>   
+        <h3>$17.5</h3>
+        </li>
+        
+        <li class="card" style="background-image:url('Flowers/flowers5.jpeg');">
+        <h2>Calla Lilies</h2>   
+        <h3>$13.7</h3>   
+        </li>
+        
+        <li class="card" style="background-image:url('Flowers/flowers6.jpeg');">
+        <h2>Lavenders</h2>   
+        <h3>$15.99</h3>   
+        </li>
+        
+        <li class="card" style="background-image:url('Flowers/flowers7.jpg');">
+        <h2>Red Roses</h2>   
+        <h3>$22.7</h3>   
+        </li>
+        
+        <li class="card" style="background-image:url('Flowers/flowers8.jpg');">
+        <h2>Yellow Tulips</h2>   
+        <h3>$19.8</h3>   
+        </li>
+        
+        <li class="card" style="display:none;">
+        </li>
+        
+        </ul> 
+        
+    </div>
+        
+
+
+</section>
+
+</a>
+
+<span class="title">Slides - Style 1</span>
+
+</li>
+
+
+
+<!-- carousel 5-->
+<li class="container5 Design" style="background-image:url('Books/Books.jpg');">
+
+<a href="Slides2.html" target="_blank">
+
+<section class="container">
+
+
+    <div class="wrapper">
+
+        <ul class="carousel">
+        
+        <li class="card" style="height:200px;background-image:url('Books/book1.jpg');">
+        <div class="dark"></div>
+        <h2>CLASSIC</h2>
+        <h3>Anne de Ingleside</h3>
+        <span>L.M. Montgomery</span>
+        </li>
+        
+        <li class="card" style="height:250px;background-image:url('Books/book2.jpg');">
+        <div class="dark"></div>
+        <h2>FANTASY</h2>
+        <h3>A Dança da Floresta</h3>
+        <span>Juliet Marillier</span>                 
+        </li>
+        
+        <li class="card" style="height:300px;background-image:url('Books/book3.jpg');">
+        <div class="dark"></div>
+        <h2>HISTORICAL</h2>
+        <h3>Little Women</h3>
+        <span>Louisa May Alcott</span>
+        </li>
+        
+        <li class="card" style="height:250px;background-image:url('Books/book4.jpg');">
+        <div class="dark"></div>
+        <h2>MYTHOLOGY</h2>
+        <h3>The Girl in the Tower</h3>
+        <span>Katherine Arden</span>
+        </li>
+        
+        <li class="card" style="height:200px;background-image:url('Books/book5.jpg');">
+        <div class="dark"></div> 
+        <h2>MAGIC</h2> 
+        <h3>Charting Stars</h3>
+        <span>Micheline Ryckman</span> 
+        </li>
+        
+        <li class="card active" style="display:none;">
+        </li>
+        
+        </ul>
+        
+        </div>
+
+</section>
+
+</a>
+
+<span class="title">Slides - Style 2</span>
+
+</li>
+
+
+
+<!-- carousel 6-->
+<li class="container6 Design" style="background-image:url('Watches/Watch.jpg');">
+
+<a href="Slides3.html" target="_blank">
+
+<section class="container">
+
+
+    <div class="wrapper">
+
+        <ul class="carousel">
+        
+        <li id="S1" style="background-image:url('Watches/watch1.jpg');" class="card active">
+        <h2>Michael Kors</h2>
+        <span>Jaryn Gold Crystals</span>  
+        </li>
+        
+        <li id="S2" style="background-image:url('Watches/watch2.jpg');" class="card">
+        <h2>Fossil</h2>
+        <span>Rose Glod Watch</span>                    
+        </li>
+        
+        <li id="S3" style="background-image:url('Watches/watch3.jpg');" class="card">
+        <h2>Tissot</h2>
+        <span>Black Women's Watch</span>  
+        </li>
+        
+        </ul> 
+        
+        </div>
+        
+
+</section>
+
+</a>
+
+<span class="title">Slides - Style 3</span>
+
+</li>
+
+
+
+<!-- carousel 7-->
+<li class="container7 Design">
+
+<a href="Circular.html" target="_blank">
+
+<section class="container">
+
+
+    <img src="SVG/Mockup.svg" loading="lazy" alt=""  style="object-fit:cover;width:100%;">
+
+    <div class="Container7">
+    
+    <div id="Background" class="Background">
+    
+    <img src="Icecream/Icecream1.jpg" loading="lazy" alt="" class="Active" >
+    <img src="Icecream/Icecream2.jpg" loading="lazy" alt="">
+    <img src="Icecream/Icecream3.jpg" loading="lazy" alt="">
+    <img src="Icecream/Icecream4.jpg" loading="lazy" alt="">
+    <img src="Icecream/Icecream5.jpg" loading="lazy" alt="">
+    <img src="Icecream/Icecream6.jpg" loading="lazy" alt="">
+    <img src="Icecream/Icecream7.jpg" loading="lazy" alt="">
+    <img src="Icecream/Icecream8.jpg" loading="lazy" alt="">
+    
+    </div>
+    
+    
+    <div id="Title">
+        <h2 id="Title1">Strawberry</h2>
+        <h2 id="Title2">Ice Cream</h2>
+    </div>
+        
+    <img id="text" src="SVG/Strawberry.svg">
+    
+    <div class="wrapper">
+    <div class="carousel" id="wheel">
+    <div class="C" style="--i1:rotate(0deg);"><section class="active" style="background-image:url('Icecream/img1.jpg');"></section></div>
+    <div class="C" style="--i1:rotate(-45deg);"><section style="background-image:url('Icecream/img2.jpg');"></section></div>
+    <div class="C" style="--i1:rotate(-90deg);"><section style="background-image:url('Icecream/img3.jpg');"></section></div>
+    <div class="C" style="--i1:rotate(-135deg);"><section style="background-image:url('Icecream/img4.jpg');"></section></div>
+    <div class="C" style="--i1:rotate(180deg);"><section style="background-image:url('Icecream/img5.jpg');"></section></div>
+    <div class="C" style="--i1:rotate(135deg);"><section style="background-image:url('Icecream/img6.jpg');"></section></div>
+    <div class="C" style="--i1:rotate(90deg);"><section style="background-image:url('Icecream/img7.jpg');"></section></div>
+    <div class="C" style="--i1:rotate(45deg);"><section style="background-image:url('Icecream/img8.jpg');"></section></div>
+    </div>
+    </div>
+    
+    </div>
+
+</section>
+
+</a>
+
+<span class="title">Circular Carousel</span>
+
+</li>
+
+
+
+<!-- carousel 8-->
+<li class="container8 Design">
+
+<a href="Rotating.html" target="_blank">
+
+<section class="container">
+
+
+    <div class="containerX">
+
+        <div class="slider">
+        
+        <span style="--i:1;"><img src="Devices/1.jpg" loading="lazy" alt=""><h4>Apple</h4><h6>Black Smart Watch</h6></span>
+        <span style="--i:2;"><img src="Devices/2.jpg" loading="lazy" alt=""><h4>Apple</h4><h6>Black Smart Watch</h6></span>
+        <span style="--i:3;"><img src="Devices/3.jpg" loading="lazy" alt=""><h4>SONY</h4><h6>Grey Headphones</h6></span>
+        <span style="--i:4;"><img src="Devices/4.jpg" loading="lazy" alt=""><h4>SONY</h4><h6>Black Headphones</h6></span>
+        <span style="--i:5;"><img src="Devices/5.jpg" loading="lazy" alt=""><h4>JBL</h4><h6>Black Headphones</h6></span>
+        <span style="--i:6;"><img src="Devices/6.jpg" loading="lazy" alt=""><h4>Apple</h4><h6>Black AirPods</h6></span>
+        <span style="--i:7;"><img src="Devices/7.jpg" loading="lazy" alt=""><h4>FLOVEME</h4><h6>Power Bank</h6></span>
+        <span style="--i:8;"><img src="Devices/8.jpg" loading="lazy" alt=""><h4>Lenovo</h4><h6>White AirPods</h6></span>
+        
+        </div>
+        
+        </div>
+        
+
+</section>
+
+</a>
+
+<span class="title">Rotating Carousel</span>
+
+</li>
+
+
+
+<!-- carousel 9-->
+<li class="container9 Design">
+
+<a href="ImageSlider1.html" target="_blank">
+
+<section class="container">
+
+
+    <div class="ContainerY">
+
+        <ul class="slider">
+        
+        <li class="slides" style="background-image:url(Suits/suit1.jpg);">
+        <h3>Ted Baker</h3>
+        <span>Dark Grey Slim Fit Blazer</span>
+        </li>
+        
+        <li class="slides" style="background-image:url(Suits/suit2.jpg);">
+        <h3>Gucci</h3>
+        <span>Men's Sky Blue Blazer</span>
+        </li>
+        
+        <li class="slides" style="background-image:url(Suits/suit3.jpg);">
+        <h3>Gucci</h3>
+        <span>Slim Fit Suit Jacket</span>
+        </li>
+        
+        <li class="slides" style="background-image:url(Suits/suit4.jpg);">
+        <h3>Dolce & Gabbana</h3>
+        <span>Sand Slim Fit Blazer</span>
+        </li>
+        
+        <li class="slides" style="background-image:url(Suits/suit5.jpg);">
+        <h3>Gucci</h3>
+        <span>Men's Grey Whool Suit</span>
+        </li>
+        
+        <li class="slides" style="background-image:url(Suits/suit6.jpg);">
+        <h3>Ted Baker</h3>
+        <span>Men's White 2 Piece Suit</span>
+        </li>
+        
+        <li class="slides" style="background-image:url(Suits/suit7.jpg);">
+        <h3>Ted Baker</h3>
+        <span>Men's Grey Whool Suit</span>
+        </li>
+        
+        <li class="slides" style="background-image:url(Suits/suit8.jpg);">
+        <h3>Gucci</h3>
+        <span>Slim Fit Balck Blazer</span>
+        </li>
+        
+        <li class="slides" style="background-image:url(Suits/suit9.jpg);">
+        <h3>Dolce & Gabbana</h3>
+        <span>Men's Grey Whool Suit</span>
+        </li>
+        
+        </ul>
+        
+    </div>
+        
+
+</section>
+
+</a>
+
+<span class="title">Image Slider - Style 1</span>
+
+</li>
+
+
+
+<!-- carousel 10-->
+<li class="container10 Design" style="background-image:url('Kids1/background.jpg');">
+
+<a href="ImageSlider2.html" target="_blank">
+
+<section class="container">
+
+        <div class="ContainerZ">
+    
+        <ul class="slider">
+        
+        <li class="slides" style="background-image:url(Kids1/kid1.jpg);">
+        <h3>Lisa</h3>
+        <span>13th Jan 2015</span>
+        </li>
+        
+        <li class="slides" style="background-image:url(Kids1/kid2.jpg);">
+        <h3>Natalie</h3>
+        <span>17th Mar 2014</span>
+        </li>
+        
+        <li class="slides" style="background-image:url(Kids1/kid3.jpg);">
+        <h3>Rose</h3>
+        <span>11th Nov 2009</span>
+        </li>
+        
+        <li class="slides" style="background-image:url(Kids1/kid4.jpg);">
+        <h3>Amalia</h3>
+        <span>16th Dec 2010</span>
+        </li>
+        
+        <li class="slides" style="background-image:url(Kids1/kid5.jpg);">
+        <h3>Christina</h3>
+        <span>21th May 2012</span>
+        </li>
+        
+        <li class="slides" style="background-image:url(Kids1/kid6.jpg);">
+        <h3>Gwen</h3>
+        <span>8th July 2006</span>
+        </li>
+        
+        <li class="slides" style="background-image:url(Kids1/kid7.jpg);">
+        <h3>Katie</h3>
+        <span>2th Feb 2005</span>
+        </li>
+        
+        <li class="slides" style="background-image:url(Kids1/kid8.jpg);">
+        <h3>Martina</h3>
+        <span>13th Oct 2007</span>
+        </li>
+        
+        <li class="slides" style="background-image:url(Kids1/kid9.jpg);">
+        <h3>Lola</h3>
+        <span>19th Nov 2012</span>
+        </li>
+        
+        <li class="slides" style="background-image:url(Kids1/kid10.jpg);">
+        <h3>Sophia</h3>
+        <span>23th Mar 2011</span>
+        </li>
+        
+        <li class="slides" style="background-image:url(Kids1/kid11.jpg);">
+        <h3>Kaila</h3>
+        <span>7th Jan 2015</span>
+        </li>
+        
+        <li class="slides" style="background-image:url(Kids1/kid12.jpg);">
+        <h3>Klara</h3>
+        <span>12th April 2010</span>
+        </li>
+        
+        </ul>
+        
+        </div>
+        
+
+</section>
+
+</a>
+
+<span class="title">Image Slider - Style 2</span>
+
+</li>
+
+
+
+<!-- carousel 11-->
+<li class="container11 Design" style="background-image:url('Photos/Album.jpeg');">
+
+<a href="Swiper1.html" target="_blank">
+
+<section class="container">
+
+
+    <div class="swiper1 mySwiper1">
+
+        <ul class="swiper-wrapper">
+        
+        <li class="swiper-slide">
+        <img src="Photos/photo1.jpg" loading="lazy" alt="">
+        </li>
+        
+        <li class="swiper-slide">
+        <img src="Photos/photo2.jpeg" loading="lazy" alt="">
+        </li>
+        
+        <li class="swiper-slide">
+        <img src="Photos/photo3.jpg" loading="lazy" alt="">
+        </li>
+        
+        <li class="swiper-slide">
+        <img src="Photos/photo4.jpg" loading="lazy" alt="">
+        </li>
+        
+        <li class="swiper-slide">
+        <img src="Photos/photo5.jpg" loading="lazy" alt="">
+        </li>
+        
+        <li class="swiper-slide">
+        <img src="Photos/photo6.jpg" loading="lazy" alt="">
+        </li>
+        
+        <li class="swiper-slide">
+        <img src="Photos/photo7.jpg" loading="lazy" alt="">
+        </li>
+        
+        <li class="swiper-slide">
+        <img src="Photos/photo8.jpeg" loading="lazy" alt="">
+        </li>
+        
+        <li class="swiper-slide">
+        <img src="Photos/photo9.jpeg" loading="lazy" alt="">
+        </li>
+        
+        <li class="swiper-slide">
+        <img src="Photos/photo10.jpeg" loading="lazy" alt="">
+        </li>
+        
+        <li class="swiper-slide">
+        <img src="Photos/photo11.jpeg" loading="lazy" alt="">
+        </li>
+        
+        <li class="swiper-slide">
+        <img src="Photos/photo12.jpeg" loading="lazy" alt="">
+        </li>
+        
+        </ul>
+        
+        </div>
+
+</section>
+
+</a>
+
+<span class="title">Swiper.js - Cards</span>
+
+</li>
+
+
+
+<!-- carousel 12-->
+<li class="container12 Design" style="margin-bottom:80px;">
+
+<a href="Swiper2.html" target="_blank">
+
+<section class="container">
+
+<div class="swiper-container">
+
+<ul class="swiper-wrapper">
+
+<li id="1" class="swiper-slide">
+<img src="Food/pizza.jpg" loading="lazy" alt="">
+<h2>$20</h2>
+<h3>Pizza</h3>
+<span>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+</span>     
+</li>
+
+<li id="2" class="swiper-slide">
+<img src="Food/steak.jpg" loading="lazy" alt="">
+<h2>$35</h2>
+<h3>Steak</h3>
+<span>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+</span>  
+</li>
+
+<li id="3" class="swiper-slide">
+<img src="Food/meatballs.jpg" loading="lazy" alt="">
+<h2>$18</h2>
+<h3>Meatballs</h3>
+<span>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+</span>  
+</li>
+
+<li id="4" class="swiper-slide">
+<img src="Food/chicken.jpg" loading="lazy" alt="">
+<h2>$15</h2>
+<h3>Chicken Nuggets</h3>
+<span>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+</span>  
+</li>
+
+<li id="5" class="swiper-slide">
+<img src="Food/cheesecake.jpg" loading="lazy" alt="">
+<h2>$12</h2>
+<h3>Cheese Cake</h3>
+<span>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+</span>
+</li>
+
+<li id="6" class="swiper-slide">
+<img src="Food/creamcaramel.jpg" loading="lazy" alt="">
+<h2>$8</h2>
+<h3>Cream Caramel</h3>
+<span>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+</span>  
+</li>
+
+<li id="7" class="swiper-slide" loading="lazy" alt="">
+<img src="Food/tiramisu.jpg">
+<h2>$10</h2>
+<h3>Tiramisu</h3>
+<span>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+</span>  
+</li>
+
+<li id="8" class="swiper-slide">                 
+<img src="Food/icecream.jpg" loading="lazy" alt="">
+<h2>$7</h2>
+<h3>Ice Cream</h3>
+<span>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+</span>  
+</li>
+
+</ul>
+
+<div class="swiper-pagination"></div>
+
+</div>
+
+
+</section>
+
+</a>
+
+<span class="title">Swiper.js - Coverflow</span>
+
+</li>
+
+
+
+</ul>
+
+
+
+<ul class="Container" style="background:red;"></ul>
+<ul class="Container" style="background:blue;"></ul>
+<ul class="Container" style="background:green;"></ul>
+
+</div>
+
+<audio id="audio1" class="audio_1">
+<source src="Sound/SoundA.m4a">
+</audio>
+
+<audio id="audio2" class="audio_1">
+<source src="Sound/SoundB.m4a">
+</audio>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" ></script>
+<script src="JS/Logo.js"></script>
+<script src="JS/Basic1.js"></script>
+<script src="JS/Basic2.js"></script>
+<script src="JS/Infinite.js"></script>
+<script src="JS/Slides1.js"></script>
+<script src="JS/Slides2.js"></script>
+<script src="JS/Slides3.js"></script>
+<script src="JS/Circular.js"></script>
+<script src="JS/ImageSlider.js"></script>
+<script src="JS/Photos.js"></script>
+<script src="JS/Swiper1.js"></script>
+<script src="JS/Swiper2.js"></script>
+
+
+
+
+</body>
+
+</html>
