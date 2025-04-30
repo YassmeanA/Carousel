@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Swiper1</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="CSS/SwiperSource.css"/>
+<style>
+
+html {
+-webkit-tap-highlight-color: transparent;
+scroll-behavior:smooth;}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;}
+
+body {
+font-family: Sans-serif;
+display: flex;
+align-items: center;
+justify-content: center;
+min-height: 200vh;
+overflow-x: hidden;
+background: linear-gradient(to bottom right, #F8EBA6, #FFD8C2);}
+
+.Container{
+position: absolute;
+top:50px;
+width:100vw;
+display: flex;
+overflow-x:hidden;
+align-items: center;
+visibility: visible;
+justify-content: center;}
+
+.swiper {
+position:relative;
+max-width: 2200px;
+width:100vw;
+display:flex;
+align-items: center;
+justify-content: center;}
+
+.swiper-wrapper {
+padding:50px 0;
+display: flex;
+align-items:center;
+list-style:none;}
+
+.swiper .controls .next ,.prev{
+height: 50px;
+width: 50px;
+background: white;
+border-radius: 50%;
+cursor: pointer;
+position: absolute;
+z-index:1;
+box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+transition: 0.3s ease;}
+
+.controls{
+position:absolute;
+height:50px;}
+
+.controls .next:active,.prev:active{
+transform:scale(0.85);}
+
+.prev{
+left:0px;}
+
+.next{
+right:0px;}
+
+.swiper-slide {
+user-select:none;
+display:flex;
+overflow:hidden;
+text-align:left;
+border-radius:13px;
+box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);}
+
+span i{
+color:gold;
+text-shadow:3px 3px 5px rgba(0,0,0,0.2);}
+
+.swiper-slide span {
+position: absolute;
+bottom:0px;
+left:0px;
+color:white;
+font-weight:600;
+z-index:1;}
+
+img{
+width:100%;
+height:100%;
+object-fit:cover;
+position: absolute;}
+
+.swiper-slide h2 {
+position:absolute;
+right:0;
+text-align:right;
+font-weight: bold;
+z-index:1;
+color:white;}
+
+.swiper-slide h3 {
+text-align:left;
+font-weight: 500;
+z-index:1;
+position: absolute;
+color:white;}
+
+/* target the active bullet */
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+width:30px;
+transform:scale(1);
+opacity:1;}
+
+/* target all bullets */
+.swiper-pagination-bullet {
+width:12px;
+height:12px;
+border-radius:6px;
+background-color:white;
+box-shadow: 0 5px 5px rgba(0, 0, 0, 0.03);
+opacity:0.5;
+transform:scale(0.6);
+transition: 0.3s ease;}
+
+.swiper-pagination{
+position: absolute;
+bottom:-10px;
+display:flex;
+align-items: center;
+justify-content:center;}
+
+@media screen and (min-width: 900px) {
+
+.controls{
+width:calc(40vw + 50px);}
+
+.swiper-slide{
+width:40vw;
+height:35vw;}
+
+h2{
+font-size:2.5rem;
+padding:15px;
+text-shadow:2px 2px 4px rgba(0,0,0,0.2);}
+
+h3{
+bottom:25px;
+padding:15px;
+font-size:1.5rem;
+text-shadow:2px 2px 3px rgba(0,0,0,0.5);}
+
+.swiper-slide span {
+font-size:1rem;
+padding:15px;
+text-shadow: 3px 3px 5px rgba(0,0,0,0.2);}
+
+a{
+text-decoration:none;}
+
+}
+
+@media screen and (max-width: 900px) {
+
+.controls{
+width:calc(50vw + 50px);}
+
+.swiper-slide{
+width:50vw;
+height:40vw;}
+
+h2{
+padding:10px;
+font-size:2rem;
+text-shadow:2px 2px 4px rgba(0,0,0,0.2);}
+
+h3{
+bottom:23px;
+padding:10px;
+font-size:1rem;
+text-shadow:2px 2px 3px rgba(0,0,0,0.5);}
+
+.swiper-slide span {
+font-size:0.8rem;
+padding:10px;
+text-shadow:3px 3px 5px rgba(0,0,0,0.2);}}
+
+
+@media screen and (max-width: 600px) {
+
+.controls{
+width:calc(70vw + 50px);}
+
+.swiper-slide{
+width:70vw;
+height:60vw;}
+
+h2{
+padding:15px;
+font-size:2rem;
+text-shadow:2px 2px 4px rgba(0,0,0,0.2);}
+
+h3{
+bottom:20px;
+padding:15px;
+font-size:1.2rem;
+text-shadow:2px 2px 3px rgba(0,0,0,0.5);}
+
+.swiper-slide span {
+font-size:1rem;
+padding:15px;
+text-shadow:3px 3px 5px rgba(0,0,0,0.2);}}
+
+
+@media screen and (max-width: 400px) {
+
+.controls{
+width:calc(80vw + 50px);}
+
+.swiper-slide{
+width:80vw;
+height:70vw;}
+
+h2{
+padding:10px;
+font-size: 2rem;
+text-shadow:2px 2px 4px rgba(0,0,0,0.2);}
+
+h3{
+bottom:20px;
+padding:10px;
+font-size:1rem;
+text-shadow:2px 2px 3px rgba(0,0,0,0.5);}
+
+.swiper-slide span {
+font-size:0.8rem;
+padding:10px;
+text-shadow:3px 3px 5px rgba(0,0,0,0.2);}}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="Container">
+
+<div class="swiper mySwiper">
+
+<ul class="swiper-wrapper">
+
+<li id="1" class="swiper-slide">
+<img src="Food/pizza.jpg" loading="lazy" alt="">
+<h2>$20</h2>
+<h3>Pizza</h3>
+<span>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+</span>     
+</li>
+
+<li id="2" class="swiper-slide">
+<img src="Food/steak.jpg" loading="lazy" alt="">
+<h2>$35</h2>
+<h3>Steak</h3>
+<span>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+</span>  
+</li>
+
+<li id="3" class="swiper-slide">
+<img src="Food/meatballs.jpg" loading="lazy" alt="">
+<h2>$18</h2>
+<h3>Meatballs</h3>
+<span>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+</span>  
+</li>
+
+<li id="4" class="swiper-slide">
+<img src="Food/chicken.jpg" loading="lazy" alt="">
+<h2>$15</h2>
+<h3>Chicken Nuggets</h3>
+<span>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+</span>  
+</li>
+
+<li id="5" class="swiper-slide">
+<img src="Food/cheesecake.jpg" loading="lazy" alt="">
+<h2>$12</h2>
+<h3>Cheese Cake</h3>
+<span>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+</span>
+</li>
+
+<li id="6" class="swiper-slide">
+<img src="Food/creamcaramel.jpg" loading="lazy" alt="">
+<h2>$8</h2>
+<h3>Cream Caramel</h3>
+<span>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+</span>  
+</li>
+
+<li id="7" class="swiper-slide">
+<img src="Food/tiramisu.jpg" loading="lazy" alt="">
+<h2>$10</h2>
+<h3>Tiramisu</h3>
+<span>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+</span>  
+</li>
+
+<li id="8" class="swiper-slide">                 
+<img src="Food/icecream.jpg" loading="lazy" alt="">
+<h2>$7</h2>
+<h3>Ice Cream</h3>
+<span>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+<i class="fa-solid  fas fa-star"></i>
+</span>  
+</li>   
+  
+</ul>
+
+<div class="controls">
+
+<div class="prev">
+<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M26.3697 30.7955C26.5107 30.6545 26.5898 30.4633 26.5898 30.264C26.5898 30.0646 26.5107 29.8735 26.3697 29.7325L22.6483 26.0111L26.3697 22.2897C26.5067 22.1479 26.5825 21.958 26.5807 21.7609C26.579 21.5638 26.5 21.3752 26.3606 21.2358C26.2212 21.0964 26.0326 21.0174 25.8355 21.0157C25.6384 21.0139 25.4485 21.0897 25.3067 21.2267L21.0538 25.4796C20.9129 25.6205 20.8337 25.8117 20.8337 26.0111C20.8337 26.2104 20.9129 26.4016 21.0538 26.5426L25.3067 30.7955C25.4477 30.9364 25.6389 31.0156 25.8382 31.0156C26.0376 31.0156 26.2287 30.9364 26.3697 30.7955Z" fill="black" stroke="black" stroke-width="1.66667"/>
+</svg>
+</div>
+
+<div class="next">
+<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M23.6303 30.7955C23.4893 30.6545 23.4102 30.4633 23.4102 30.264C23.4102 30.0646 23.4893 29.8735 23.6303 29.7325L27.3517 26.0111L23.6303 22.2897C23.4933 22.1479 23.4175 21.958 23.4193 21.7609C23.421 21.5638 23.5 21.3752 23.6394 21.2358C23.7788 21.0964 23.9674 21.0174 24.1645 21.0157C24.3616 21.0139 24.5515 21.0897 24.6933 21.2267L28.9462 25.4796C29.0871 25.6205 29.1663 25.8117 29.1663 26.0111C29.1663 26.2104 29.0871 26.4016 28.9462 26.5426L24.6933 30.7955C24.5523 30.9364 24.3611 31.0156 24.1618 31.0156C23.9624 31.0156 23.7713 30.9364 23.6303 30.7955Z" fill="black" stroke="black" stroke-width="1.66667"/>
+</svg>
+</div>
+
+</div>
+
+<div class="swiper-pagination"></div>
+
+</div>
+
+</div>
+
+
+<script src="JS/SwiperSource.js"></script>
+
+<script>
+
+const wrapper = document.querySelector(".swiper");
+
+var swiper = new Swiper(".mySwiper", {
+
+spaceBetween:0,
+
+effect:'coverflow',
+grabCursor:true,
+centeredSlides:true,
+loop:true,
+slidesPerView:"auto",
+
+coverflowEffect: {
+rotate:0,
+stretch:0,
+depth:150,
+modifier:1,
+slideShadows:false,},
+
+pagination: {
+el:'.swiper-pagination',
+clickable:true,},
+
+navigation: {
+nextEl:'.next',
+prevEl:'.prev',},
+
+});
+
+</script>
+
+</body>
+
+</html>

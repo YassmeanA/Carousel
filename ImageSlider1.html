@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ImageSlider1</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+<style>
+
+html {
+-webkit-tap-highlight-color: transparent;
+scroll-behavior:smooth;}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family:Sans-serif;}
+
+body {
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:150vh;
+overflow-x:hidden;
+background:linear-gradient(to bottom, #80A4CB, #FDF3F5);}
+
+.container{
+position: absolute;
+top:50px;
+width:100vw;
+height:580px;
+padding:30px;
+overflow-x: hidden;
+display: flex;
+justify-content:center;
+align-items:center;}
+
+.slider{
+position: absolute;
+top:0;
+border-radius:10px;
+width:340px;
+height:400px;
+list-style:none;}
+
+.slides{
+position: absolute;
+transition:0.5s;
+background-image:var(--img);
+background-size:cover;
+background-position:center;
+border-radius:10px;
+box-shadow:0 10px 20px rgba(0,0,0,0.3);
+top:410px;
+width:80px;
+height:80px;
+transform: translateY(0%);}
+
+.slides:nth-child(1),.slides:nth-child(2){
+position: absolute;
+top:0;
+width:100%;
+height:100%;
+transform: translateY(0);
+box-shadow:0 15px 25px rgba(0,0,0,0);}
+
+.slides:nth-child(3){
+opacity:1;
+left:0px;
+cursor:pointer;}
+
+.slides:nth-child(4){
+left:90px;
+opacity:0.5;}
+
+.slides:nth-child(5){
+left:180px;
+opacity:0.2;}
+
+.slides:nth-child(6), .slides:nth-child(7), .slides:nth-child(8), .slides:nth-child(9){
+left:270px;
+opacity:0;}
+
+.arrows{
+position: absolute;
+margin:0 auto;
+bottom:10px;
+width:120px;
+height:50px;
+display:none;
+column-gap:20px;}
+
+.arrows svg {
+height: 50px;
+width: 50px;
+background: white;
+border-radius: 50%;
+cursor: pointer;
+box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+transition: 0.3s ease;}
+
+.arrows svg:active{
+transform:translateY(0%) scale(0.85);}
+
+h3{
+font-size:1.2rem;
+padding:20px;
+position: absolute;
+filter:blur(10px);
+opacity:0;
+left:0px;
+bottom:-10px;
+color:white;
+text-shadow:2px 2px 2px rgba(0,0,0,0.4);
+transition: all 0.5s 0.3s, opacity 0.3s 0.3s;}
+
+span{
+font-size:1rem;
+padding:20px;
+position: absolute;
+filter:blur(10px);
+font-weight:150;
+opacity:0;
+left:0px;
+bottom:0px;
+color:white;
+text-shadow:1px 2px 2px rgba(0,0,0,0.4);
+transition: all 0.5s 0.3s, opacity 0.3s 0.3s;}
+
+.slides:nth-child(1) h3,.slides:nth-child(2) h3{
+filter:blur(0px);
+bottom:22px;
+opacity:1;}
+
+.slides:nth-child(1) span,.slides:nth-child(2) span{
+filter:blur(0px);
+bottom:0px;
+opacity:1;}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<ul class="slider">
+
+<li class="slides" style="--img:url(Suits/suit1.jpg);">
+<h3>Ted Baker</h3>
+<span>Dark Grey Slim Fit Blazer</span>
+</li>
+
+<li class="slides" style="--img:url(Suits/suit2.jpg);">
+<h3>Gucci</h3>
+<span>Men's Sky Blue Blazer</span>
+</li>
+
+<li class="slides" style="--img:url(Suits/suit3.jpg);">
+<h3>Gucci</h3>
+<span>Slim Fit Suit Jacket</span>
+</li>
+
+<li class="slides" style="--img:url(Suits/suit4.jpg);">
+<h3>Dolce & Gabbana</h3>
+<span>Sand Slim Fit Blazer</span>
+</li>
+
+<li class="slides" style="--img:url(Suits/suit5.jpg);">
+<h3>Gucci</h3>
+<span>Men's Grey Whool Suit</span>
+</li>
+
+<li class="slides" style="--img:url(Suits/suit6.jpg);">
+<h3>Ted Baker</h3>
+<span>Men's White 2 Piece Suit</span>
+</li>
+
+<li class="slides" style="--img:url(Suits/suit7.jpg);">
+<h3>Ted Baker</h3>
+<span>Men's Grey Whool Suit</span>
+</li>
+
+<li class="slides" style="--img:url(Suits/suit8.jpg);">
+<h3>Gucci</h3>
+<span>Slim Fit Balck Blazer</span>
+</li>
+
+<li class="slides" style="--img:url(Suits/suit9.jpg);">
+<h3>Dolce & Gabbana</h3>
+<span>Men's Grey Whool Suit</span>
+</li>
+
+</ul>
+
+
+<div class="arrows">
+
+<div class="left">
+<svg  id="left" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M26.3697 30.7955C26.5107 30.6545 26.5898 30.4633 26.5898 30.264C26.5898 30.0646 26.5107 29.8735 26.3697 29.7325L22.6483 26.0111L26.3697 22.2897C26.5067 22.1479 26.5825 21.958 26.5807 21.7609C26.579 21.5638 26.5 21.3752 26.3606 21.2358C26.2212 21.0964 26.0326 21.0174 25.8355 21.0157C25.6384 21.0139 25.4485 21.0897 25.3067 21.2267L21.0538 25.4796C20.9129 25.6205 20.8337 25.8117 20.8337 26.0111C20.8337 26.2104 20.9129 26.4016 21.0538 26.5426L25.3067 30.7955C25.4477 30.9364 25.6389 31.0156 25.8382 31.0156C26.0376 31.0156 26.2287 30.9364 26.3697 30.7955Z" fill="black" stroke="black" stroke-width="1.66667"/>
+</svg>
+</div>
+
+<div class="right">
+<svg id="right" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M23.6303 30.7955C23.4893 30.6545 23.4102 30.4633 23.4102 30.264C23.4102 30.0646 23.4893 29.8735 23.6303 29.7325L27.3517 26.0111L23.6303 22.2897C23.4933 22.1479 23.4175 21.958 23.4193 21.7609C23.421 21.5638 23.5 21.3752 23.6394 21.2358C23.7788 21.0964 23.9674 21.0174 24.1645 21.0157C24.3616 21.0139 24.5515 21.0897 24.6933 21.2267L28.9462 25.4796C29.0871 25.6205 29.1663 25.8117 29.1663 26.0111C29.1663 26.2104 29.0871 26.4016 28.9462 26.5426L24.6933 30.7955C24.5523 30.9364 24.3611 31.0156 24.1618 31.0156C23.9624 31.0156 23.7713 30.9364 23.6303 30.7955Z" fill="black" stroke="black" stroke-width="1.66667"/>
+</svg>
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+let left = document.querySelector(".left");
+let right = document.querySelector(".right");
+let slider = document.querySelector(".slider");
+const Slides = document.querySelectorAll(".slides");
+
+let x = 2;
+
+for (let i = 0; i < Slides.length;i++) {
+Slides[i].addEventListener("click", function () {
+
+if (x === i) {
+let Slides = document.querySelectorAll(".slides");
+slider.appendChild(Slides[0]);
+
+if(i == (Slides.length - 1)){x = 0}else{x = (x + 1);};}
+
+});};
+
+right.addEventListener("click", function (){
+let Slides = document.querySelectorAll(".slides");
+slider.appendChild(Slides[0]);
+});
+
+left.addEventListener("click", function (){
+let Slides = document.querySelectorAll(".slides");
+slider.prepend(Slides[Slides.length - 1]);
+});
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slides3</title>
+    <link rel="stylesheet" href="CSS/Gentle.css" />
+
+<style>
+
+html {
+-webkit-tap-highlight-color: transparent;
+scroll-behavior:smooth;}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family:Sans-serif;}
+
+body {
+display: flex;
+align-items: center;
+min-height: 100vh;
+background: rgba(228, 220, 220,0.9);
+background-image:url(Watches/Watch.jpg);
+background-blend-mode: lighten;
+background-size:cover;
+background-position:center;}
+
+.wrapper{
+position: absolute;
+width:100vw;
+height:250px;
+display:flex;
+align-items:center;
+justify-content:center;}
+
+.carousel {
+margin:20px 0;
+width:334px;
+height:100%;
+display: flex;
+gap:10px;
+align-items:center;
+justify-content:center;
+flex-wrap:nowrap;}
+
+.card{
+--i1:65%;
+--i2:25%;
+--i3:15%;
+--i4:50%;
+--i5:40%;
+--i6:10%;
+position:relative;
+height:100%;
+width:65%;
+list-style: none;
+border-radius: 20px;
+overflow: hidden;
+display: flex;
+align-items: center;
+justify-content: center;
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+background:var(--i);
+background-size:cover;
+background-position:center;
+cursor:pointer;}
+
+.card:nth-child(2){
+width:25%;}
+
+.card:nth-child(3){
+width:15%;}
+
+.card h2 {
+text-shadow:1px 1px 3px rgba(0,0,0,0.3);
+user-select:none;
+font-weight: 500;
+font-size: 0.9rem;
+width:200px;
+color:white;
+padding:10px;
+position : absolute;
+bottom:5px; 
+left:0;
+opacity :0;
+transition: 0.4s cubic-bezier(0.5,0,0.5,1) ,bottom 0.4s cubic-bezier(0.5,0,0.5,1);}
+
+.card span {
+text-shadow:1px 1px 1px rgba(0,0,0,0.3);
+user-select:none;
+font-weight: 250;
+font-size: 0.7rem;
+width:200px;
+color:white;
+padding:10px;
+position : absolute;
+bottom:0; 
+left:0;
+opacity :0;
+transition: 0.4s cubic-bezier(0.5,0,0.5,1) ,bottom 0.4s cubic-bezier(0.5,0,0.5,1);}
+
+.card.active h2{
+left:10px;
+bottom:15px; 
+opacity:1;}
+
+.card.active span{
+left:10px;
+bottom:0px; 
+opacity:1;}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<ul class="carousel">
+
+<li id="S1" style="--i:url('Watches/watch1.jpg');" class="card active">
+<h2>Michael Kors</h2>
+<span>Jaryn Gold Crystals</span>  
+</li>
+
+<li id="S2" style="--i:url('Watches/watch2.jpg');" class="card">
+<h2>Fossil</h2>
+<span>Rose Glod Watch</span>                    
+</li>
+
+<li id="S3" style="--i:url('Watches/watch3.jpg');" class="card">
+<h2>Tissot</h2>
+<span>Black Women's Watch</span>  
+</li>
+
+</ul> 
+
+</div>
+
+<script>
+
+let x = 1;
+
+const S1 = document.querySelector("#S1")
+const S2 = document.querySelector("#S2")
+const S3 = document.querySelector("#S3")
+
+const Slide1 = () => {
+
+S2.classList.remove("active");
+S3.classList.remove("active");
+S1.classList.add("active");
+
+
+if(x == 2){
+S1.style.animation="Gentle31 1.5s forwards";
+S2.style.animation="Gentle12 1.5s forwards",
+S3.style.animation="Gentle23 1.5s forwards";};
+
+if(x == 3){
+S1.style.animation="Gentle21 1.5s forwards";
+S2.style.animation="Gentle32 1.5s forwards",
+S3.style.animation="Gentle13 1.5s forwards";};
+
+x = 1;};
+
+const Slide2 = () => {
+
+S1.classList.remove("active");
+S3.classList.remove("active");
+S2.classList.add("active");
+
+if(x == 1){
+S2.style.animation="Gentle21 1.5s forwards";
+S1.style.animation="Gentle13 1.5s forwards",
+S3.style.animation="Gentle32 1.5s forwards";};
+
+if(x == 3){
+S2.style.animation="Gentle31 1.5s forwards";
+S1.style.animation="Gentle23 1.5s forwards",
+S3.style.animation="Gentle12 1.5s forwards";};
+
+x = 2;};
+
+const Slide3 = () => {
+
+S1.classList.remove("active");
+S2.classList.remove("active");
+S3.classList.add("active");
+
+if(x == 1){
+S3.style.animation="Gentle31 1.5s forwards";
+S1.style.animation="Gentle12 1.5s forwards",
+S2.style.animation="Gentle23 1.5s forwards";};
+
+if(x == 2){
+S3.style.animation="Gentle21 1.5s forwards";
+S1.style.animation="Gentle32 1.5s forwards",
+S2.style.animation="Gentle13 1.5s forwards";};
+
+x = 3;};
+
+//Check if the user uses touchscreen or not
+if ("ontouchstart" in document.documentElement)
+
+{
+
+S1.addEventListener("touchmove",Slide1);
+S2.addEventListener("touchmove",Slide2);
+S3.addEventListener("touchmove",Slide3);
+
+}
+
+else {
+
+S1.addEventListener("click",Slide1);
+S2.addEventListener("click",Slide2);
+S3.addEventListener("click",Slide3);
+
+}
+
+
+</script>
+
+</body>
+
+</html>

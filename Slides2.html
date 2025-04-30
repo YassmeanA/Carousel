@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slides2</title>
+
+<style>
+
+html {
+-webkit-tap-highlight-color: transparent;
+scroll-behavior:smooth;}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family:Sans-serif;}
+
+body {
+display: flex;
+align-items: center;
+min-height: 100vh;
+background: rgb(228, 220, 220);}
+
+.wrapper{
+width:100vw;
+height: 250px;
+display:flex;
+align-items:center;
+justify-content:center;}
+
+.carousel {
+margin:20px 0;
+width:90vw;
+height: 100%;
+display: flex;
+column-gap:6px;
+align-items:center;
+justify-content:center;
+flex-wrap:nowrap;}
+
+.card{
+position:relative;
+height: 100%;
+width:65%;
+list-style: none;
+border-radius: 20px;
+overflow: hidden;
+display: flex;
+align-items: center;
+justify-content: center;
+transition:0.5s;
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+background:var(--i);
+background-size:cover;
+background-position:center;
+cursor:pointer;}
+
+.card h2 {
+text-shadow:1px 1px 3px rgba(0,0,0,0.3);
+user-select:none;
+font-weight: 500;
+font-size: 0.9rem;
+width:200px;
+color:white;
+padding:10px;
+position : absolute;
+bottom:5px; 
+left:0;
+opacity :0;
+transition: 0.4s cubic-bezier(0.5,0,0.5,1) ,bottom 0.4s cubic-bezier(0.5,0,0.5,1);}
+
+.card span {
+text-shadow:1px 1px 1px rgba(0,0,0,0.3);
+user-select:none;
+font-weight: 250;
+font-size: 0.7rem;
+width:200px;
+color:white;
+padding:10px;
+position : absolute;
+bottom:0; 
+left:0;
+opacity :0;
+transition: 0.4s cubic-bezier(0.5,0,0.5,1) ,bottom 0.4s cubic-bezier(0.5,0,0.5,1);}
+
+.card.active h2{
+left:10px;
+bottom:15px; 
+opacity:1;}
+
+.card.active span{
+left:10px;
+bottom:0px; 
+opacity:1;}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="wrapper">
+<ul class="carousel">
+
+<li id="S1" class="card active" style="--i:url(Watches/watch1.jpg);">
+<h2>Michael Kors</h2>   
+<span>Jaryn Gold Crystals</span>  
+</li>
+
+<li id="S2" class="card" style="width:25%;--i:url(Watches/watch2.jpg);">
+<h2>Fossil</h2>                   
+<span>Rose Glod Watch</span>                    
+</li>
+
+<li id="S3" class="card" style="width:15%;--i:url(Watches/watch3.jpg);">
+<h2>Tissot</h2>
+<span>Black Women's Watch</span>  
+</li>
+
+</ul> 
+
+</div>
+
+<script>
+
+const Slides = document.querySelectorAll(".card");
+
+let x = 0;
+
+const Slide1 = () => {
+
+S2.classList.remove("active");
+S3.classList.remove("active");
+S1.classList.add("active");
+
+Slides[0].style.width="65%";
+
+if(x == 1){
+Slides[1].style.width="25%",
+Slides[2].style.width="15%";};
+
+if(x == 2){
+Slides[1].style.width="15%",
+Slides[2].style.width="25%";};
+
+x = 0;};
+
+const Slide2 = () => {
+
+S1.classList.remove("active");
+S3.classList.remove("active");
+S2.classList.add("active");
+
+Slides[1].style.width="65%";
+
+if(x == 0){
+Slides[0].style.width="15%",
+Slides[2].style.width="25%";};
+
+if(x == 2){
+Slides[0].style.width="25%",
+Slides[2].style.width="15%";};
+
+x = 1;};
+
+const Slide3 = () => {
+
+S1.classList.remove("active");
+S2.classList.remove("active");
+S3.classList.add("active");
+
+Slides[2].style.width="65%";
+
+if(x == 0){
+Slides[0].style.width="15%",
+Slides[1].style.width="25%";};
+
+if(x == 1){
+Slides[0].style.width="15%",
+Slides[1].style.width="25%";};
+
+x = 2;};
+
+S1.addEventListener("click",Slide1);
+S2.addEventListener("click",Slide2);
+S3.addEventListener("click",Slide3);
+
+</script>
+
+</body>
+
+</html>

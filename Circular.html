@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Circular</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+<style>
+
+html {
+-webkit-tap-highlight-color: transparent;
+scroll-behavior:smooth;}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: "Montserrat Alternates", serif;
+font-weight: 1000;
+font-style: normal;}
+
+body {
+display: flex;
+align-items: center;
+justify-content:center;
+min-height: 100vh;
+overflow-x:hidden;
+overflow-y: auto;
+background:#ffd4e4;}
+
+.Container {
+width:100vw;
+top:0;
+position:absolute;
+overflow:hidden;
+display: flex;
+align-items: center;
+justify-content:center;}
+
+#Background{
+position: absolute;
+background:#ffd4e4;
+overflow:hidden;}
+
+img {
+position:absolute;
+left:0;
+top:0;
+object-fit:cover;
+opacity:0;
+transition:0.8s;}
+
+img.Active {
+opacity:1;}
+
+.wrapper{
+position: absolute;
+right:-112.5px;
+width:225px;
+height:225px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+-webkit-mask-image: linear-gradient(to right, black 0%, black 40%, transparent 50%);
+transform:scale(1.5);}
+
+.carousel {
+position: absolute;
+width:200px;
+height:200px;
+animation: R 30s linear forwards infinite;}
+
+.C{
+pointer-events:none;
+position: absolute;
+border-radius:50%;
+width:200px;
+height:200px;
+transform:var(--i1);}
+
+.wrapper section{
+cursor:pointer;
+pointer-events:auto;
+position: absolute;
+top:39px;
+right:0;
+height: 61px;
+width:61px;
+transition: 0.3s ;
+background:var(--i2);
+background-size:cover;
+background-position:center;
+clip-path:path("M35.3044 1.64962C36.5736 0.584621 38.4699 0.747688 39.4964 2.04828C51.3116 17.0188 58.6 35.0584 60.5003 54.0349C60.6654 55.6835 59.4146 57.1181 57.7618 57.2336L13.8689 60.3029C12.2161 60.4185 10.7918 59.1704 10.5774 57.5275C9.47491 49.0819 6.23239 41.0564 1.15863 34.2153C0.171631 32.8845 0.329193 30.9973 1.59842 29.9323L35.3044 1.64962Z");}
+
+.wrapper section.active{
+pointer-events:none;
+top:36px;
+right:-4px;
+transform:scale(1.25);}
+
+#Title1 {
+width:100%;
+font-size:1.5rem;
+font-weight:1000;
+color:#ff3884;
+text-shadow:1px 2px 3px rgba(0,0,0,0.1);}
+
+#Title2 {
+width:100%;
+font-size:1.5rem;
+font-weight:1000;
+color:#ff3884;
+text-shadow:1px 2px 3px rgba(0,0,0,0.1);}
+
+#W{
+position:fixed;
+top:0;
+left:0;
+height:100%;
+width:100%;}
+
+@keyframes R {
+0%{transform: rotate(0deg);}
+100%{transform: rotate(360deg);}}
+
+
+@media screen and (max-height:500px) {
+
+.Container {
+height:700px;}
+
+}
+
+@media screen and (min-height:500px) {
+
+.Container {
+height:100vh;}
+
+}
+
+
+@media screen and (max-width:500px) {
+
+#Background {
+left:0;
+top:0;
+width:100%;
+height:100%;}
+
+img {
+width:100%;
+height:70%;
+-webkit-mask-image: linear-gradient(to bottom, black 0%, black 40%, transparent 90%);}
+
+#Title {
+width:60vw;
+position:absolute;
+top:55%;
+left: 0;
+margin:25px;
+--i1:55%;}
+
+#text {
+width:40vw;
+position:absolute;
+top:calc(55% + 90px);
+left:0;
+margin:25px;
+font-size:1rem;
+font-weight:400;
+--i2:calc(55% + 90px);}
+
+.wrapper{
+top:55%;}
+
+}
+
+
+@media screen and (min-width:501px) {
+
+#Background {
+position:absolute;
+left: 5vw;
+top:5vw;
+width:50vw;
+height:55vw;
+border-radius:30px;
+overflow: hidden;
+box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);}
+
+img {
+height:100%;
+width:100%;}
+
+#Title {
+width:50vw;
+position:absolute;
+top:65vw;
+left:5vw;
+margin:15px;
+--i1:65vw;}
+
+#Title1, #Title2{
+font-size:1.7rem;}
+
+#text {
+width:30vw;
+position:absolute;
+top:calc(65vw + 90px);
+left:5vw;
+margin:15px;
+font-size:1rem;
+font-weight:400;
+--i2:calc(65vw + 90px);}
+
+.wrapper {
+transform: scale(2);}
+
+
+}
+
+
+@media screen and (min-width:901px) {
+
+#Background {
+position:absolute;
+left:5vw;
+top:5vw;
+width:30vw;
+height:35vw;
+border-radius:30px;
+overflow: hidden;
+box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);}
+
+img {
+height:100%;
+width:100%;}
+
+#Title {
+width:30vw;
+position:absolute;
+top:5vw;
+left:40vw;
+margin:15px;
+--i1:5vw;}
+
+#Title1, #Title2{
+font-size:2.3rem;}
+
+#text {
+width:20vw;
+position:absolute;
+top:calc(5vw + 120px);
+left:40vw;
+margin:15px;
+font-size:1.3rem;
+font-weight:400;
+--i2:calc(5vw + 120px);}
+
+.wrapper {
+transform: scale(2);}
+
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="Container" class="Container">
+
+<div id="Background">
+
+<img src="Icecream/Icecream1.jpg" loading="lazy" alt="" class="Active" >
+<img src="Icecream/Icecream2.jpg" loading="lazy" alt="">
+<img src="Icecream/Icecream3.jpg" loading="lazy" alt="">
+<img src="Icecream/Icecream4.jpg" loading="lazy" alt="">
+<img src="Icecream/Icecream5.jpg" loading="lazy" alt="">
+<img src="Icecream/Icecream6.jpg" loading="lazy" alt="">
+<img src="Icecream/Icecream7.jpg" loading="lazy" alt="">
+<img src="Icecream/Icecream8.jpg" loading="lazy" alt="">
+
+</div>
+
+
+<div id="Title">
+    <h2 id="Title1">Strawberry</h2>
+    <h2 id="Title2">Ice Cream</h2>
+</div>
+    
+<span id="text">Strawberry ice cream mixed with small pieces of fresh strawberries</span>
+    
+
+<div id="W"></div>
+
+<div class="wrapper">
+<div class="carousel" id="wheel">
+<div class="C" style="--i1:rotate(-45deg);"><section style="--i2:url('Icecream/img1.jpg');"></section></div>
+<div class="C" style="--i1:rotate(-90deg);"><section style="--i2:url('Icecream/img2.jpg');"></section></div>
+<div class="C" style="--i1:rotate(-135deg);"><section style="--i2:url('Icecream/img3.jpg');"></section></div>
+<div class="C" style="--i1:rotate(0deg);"><section style="--i2:url('Icecream/img4.jpg');"></section></div>
+<div class="C" style="--i1:rotate(180deg);"><section style="--i2:url('Icecream/img5.jpg');"></section></div>
+<div class="C" style="--i1:rotate(135deg);"><section style="--i2:url('Icecream/img6.jpg');"></section></div>
+<div class="C" style="--i1:rotate(90deg);"><section style="--i2:url('Icecream/img7.jpg');"></section></div>
+<div class="C" style="--i1:rotate(45deg);"><section style="--i2:url('Icecream/img8.jpg');"></section></div>
+</div>
+</div>
+
+</div>
+
+<script src="JS/Circular.js"></script>
+
+</body>
+
+</html>

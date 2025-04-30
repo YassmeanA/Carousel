@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Slider 2</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+<style>
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Times New Roman', Times, serif;}
+
+body {
+display: flex;
+flex-direction:column;
+align-items: center;
+justify-content: center;
+min-height: 100vh;
+background:white;}
+
+.Container{
+user-select:none;
+position: absolute;
+top:0;
+left:0;
+overflow: hidden;
+height:100vh;
+width:100vw;
+display: flex;
+align-items: center;
+justify-content: center;}
+
+.container{
+transform: translateX(-10%) rotate(40deg) scale(1);
+display: flex;
+gap:1em;
+align-items: center;
+justify-content: center;}
+
+#carousel1{
+transform: translateY(-100%);}
+
+.carousel {
+max-height: 2200px;
+height: 100%;}
+
+.carousel > ul {
+list-style:none;
+height:max-content;
+padding:1em 0;
+display:flex;
+flex-direction: column;
+align-items:center;
+flex-wrap:nowrap;
+list-style:none;
+gap:1em;}
+
+.carousel .card {
+position:relative;
+pointer-events:none;
+overflow:hidden;
+height: 280px;
+background: #fff;
+border-radius: 12px;
+display: flex;
+cursor: pointer;
+width:200px;
+align-items: center;
+justify-content: center;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);}
+
+img {
+height: 100%;
+width:100%;
+object-fit: cover;}
+
+@keyframes move-ltr {
+to {transform: translateY(calc(-50%));}}
+
+@keyframes move-rtl {
+to {transform: translateY(calc(50%));}}
+
+
+</style>
+
+</head>
+
+<body>
+
+<div class="Container">
+
+<div class="container">
+
+<section id="carousel1" class="carousel">
+
+<ul>
+
+<li class="card">
+<img src="Films/slide1.jpeg" alt="" draggable="false">
+</li>
+
+<li class="card">
+<img src="Films/slide2.jpg" alt="" draggable="false">
+</li>
+
+<li class="card">
+<img src="Films/slide3.jpg" alt="" draggable="false">
+</li>
+
+<li class="card">
+<img src="Films/slide4.jpg" alt="" draggable="false">
+</li>
+
+<li class="card">
+<img src="Films/slide5.jpg" alt="" draggable="false">
+</li>
+
+<li class="card">
+<img src="Films/slide6.jpg" alt="" draggable="false">
+</li>
+
+<li class="card">
+<img src="Films/slide7.jpg" alt="" draggable="false">
+</li>
+
+<li class="card">
+<img src="Films/slide8.jpg" alt="" draggable="false">
+</li>
+
+</ul>
+
+</section>
+
+<section id="carousel2" class="carousel">
+
+<ul>
+
+<li class="card">
+<img src="Films/slide9.jpg" alt="" draggable="false">
+</li>
+
+<li class="card">
+<img src="Films/slide10.jpg" alt="" draggable="false">
+</li>
+
+<li class="card">
+<img src="Films/slide11.jpg" alt="" draggable="false">
+</li>
+
+<li class="card">
+<img src="Films/slide12.jpg" alt="" draggable="false">
+</li>
+
+<li class="card">
+<img src="Films/slide13.jpg" alt="" draggable="false">
+</li>
+
+<li class="card">
+<img src="Films/slide14.jpg" alt="" draggable="false">
+</li>
+
+<li class="card">
+<img src="Films/slide15.jpg" alt="" draggable="false">
+</li>
+
+<li class="card">
+<img src="Films/slide16.jpg" alt="" draggable="false">
+</li>
+
+</ul>
+
+</section>
+
+
+</div>
+
+</div>
+
+
+
+<script>
+
+const carousel1 = document.getElementById("carousel1");
+const carouselInner1 = carousel1.querySelector(".carousel ul");
+const carouselContent1 = Array.from(carouselInner1.children);
+carouselContent1.forEach(item => {
+const duplicatedItem1 = item.cloneNode(true);
+carouselInner1.appendChild(duplicatedItem1);
+carouselInner1.style.animation = "move-rtl 7s linear infinite";
+
+carouselInner1.addEventListener("touchstart", () => {
+carouselInner1.style.animationPlayState="paused";});
+
+carouselInner1.addEventListener("touchend", () => {
+carouselInner1.style.animationPlayState="running";});
+
+carouselInner1.addEventListener("mouseenter", () => {
+carouselInner1.style.animationPlayState="paused";});
+
+carouselInner1.addEventListener("mouseleave", () => {
+carouselInner1.style.animationPlayState="running";});
+
+});
+
+
+const carousel2 = document.getElementById("carousel2");
+const carouselInner2 = carousel2.querySelector(".carousel ul");
+const carouselContent2 = Array.from(carouselInner2.children);
+carouselContent2.forEach(item => {
+const duplicatedItem2 = item.cloneNode(true);
+carouselInner2.appendChild(duplicatedItem2);
+carouselInner2.style.animation = "move-ltr 8s linear infinite";
+
+carouselInner2.addEventListener("touchstart", () => {
+carouselInner2.style.animationPlayState="paused";});
+
+carouselInner2.addEventListener("touchend", () => {
+carouselInner2.style.animationPlayState="running";});
+
+carouselInner2.addEventListener("mouseenter", () => {
+carouselInner2.style.animationPlayState="paused";});
+
+carouselInner2.addEventListener("mouseleave", () => {
+carouselInner2.style.animationPlayState="running";});
+
+});
+
+
+</script>
+
+</body>
+
+</html>

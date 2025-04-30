@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slides1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+<style>
+
+html {
+-webkit-tap-highlight-color: transparent;
+scroll-behavior:smooth;}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family:Sans-serif;}
+
+body {
+display: flex;
+align-items: center;
+justify-content:center;
+min-height: 100vh;
+width:100vw;
+overflow-x:hidden;
+background:#FFDDE1;}
+
+* {
+font-family: "Montserrat Alternates", serif;
+font-weight: 1000;
+font-style: normal;}
+
+img {
+position:absolute;
+width:100vw;
+height:100vh;
+object-fit:cover;
+opacity:0.3;}
+
+.wrapper{
+width:100vw;
+height:250px;
+display:flex;
+align-items:center;
+overflow-x:auto;}
+
+.carousel {
+margin:0px 10px;
+display: flex;
+column-gap:10px;
+align-items:center;
+flex-wrap:nowrap;}
+
+.carousel::-webkit-scrollbar {
+display:none;}
+
+.card{
+position:relative;
+height: 220px;
+list-style: none;
+border:white solid 2px;
+border-radius: 50px;
+width:70px;
+overflow: hidden;
+display: flex;
+align-items: center;
+justify-content: center;
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+transition: 0.4s cubic-bezier(0,0,0,1);
+background:var(--i);
+background-size:cover;
+background-position:center;
+cursor:pointer;}
+
+.card h2 {
+user-select:none;
+font-weight:600;
+font-size:0.85rem;
+width:200px;
+position:absolute;
+padding:8px;
+bottom:-10px;
+left:0;
+opacity:0;
+color:white;
+text-shadow:2px 2px 2px rgba(0,0,0,0.4);
+transition:0.4s cubic-bezier(0.5,0,0.5,1) ,bottom 0.4s cubic-bezier(0.5,0,0.5,1);}
+
+.card h3 {
+user-select:none;
+font-weight:500;
+font-size:0.7rem;
+width:200px;
+position:absolute;
+padding:8px;
+bottom:-20px;
+left:0;
+opacity:0;
+color:white;
+text-shadow:2px 2px 2px rgba(0,0,0,0.4);
+transition:0.4s cubic-bezier(0.5,0,0.5,1) ,bottom 0.4s cubic-bezier(0.5,0,0.5,1);}
+
+.card.active{
+border-radius:20px;
+width:180px;}
+
+.card.active h2{
+left:5px;
+bottom:21px; 
+opacity:1;}
+
+.card.active h3{
+left:5px;
+bottom:4px; 
+opacity:1;}
+
+</style>
+
+</head>
+
+<body>
+
+<img src="Flowers/Flowers.jpg">
+
+<div class="wrapper">
+
+<ul class="carousel">
+
+<li class="card active" style="--i:url('Flowers/flowers1.jpg');">
+<h2>White Gerberas</h2>   
+<h3>$28.99</h3>   
+</li>
+
+<li class="card" style="--i:url('Flowers/flowers2.jpeg');">
+<h2>Orange Roses</h2>   
+<h3>$19.5</h3>                   
+</li>
+
+<li class="card" style="--i:url('Flowers/flowers3.jpg');">
+<h2>Sunflowers</h2>   
+<h3>$15.8</h3>
+</li>
+
+<li class="card" style="--i:url('Flowers/flowers4.jpg');">
+<h2>Pink Roses</h2>   
+<h3>$17.5</h3>
+</li>
+
+<li class="card" style="--i:url('Flowers/flowers5.jpeg');">
+<h2>Calla Lilies</h2>   
+<h3>$13.7</h3>   
+</li>
+
+<li class="card" style="--i:url('Flowers/flowers6.jpeg');">
+<h2>Lavenders</h2>   
+<h3>$15.99</h3>   
+</li>
+
+<li class="card" style="--i:url('Flowers/flowers7.jpg');">
+<h2>Red Roses</h2>   
+<h3>$22.7</h3>   
+</li>
+
+<li class="card" style="--i:url('Flowers/flowers8.jpg');">
+<h2>Yellow Tulips</h2>   
+<h3>$19.8</h3>   
+</li>
+
+</ul> 
+
+</div>
+
+<script>
+
+const Cards = document.querySelectorAll(".card");
+const Wrapper = document.querySelector(".wrapper");
+
+if(window.innerWidth < (Cards[1].offsetWidth + 10)*(Cards.length - 1) + Cards[0].offsetWidth){Wrapper.style.justifyContent="start";}else{Wrapper.style.justifyContent="center";};
+
+window.addEventListener("resize", () => {
+
+if(window.innerWidth < (Cards[1].offsetWidth + 10)*(Cards.length - 1) + Cards[0].offsetWidth + 10){Wrapper.style.justifyContent="start";}else{Wrapper.style.justifyContent="center";};
+
+});
+
+Cards.forEach((Card, index) => {
+Card.addEventListener("click", () => {
+document.querySelector(".active").classList.remove("active");
+Card.classList.add("active");});});
+    
+</script>
+
+</body>
+
+</html>
