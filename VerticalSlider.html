@@ -32,7 +32,6 @@ background-position:center;}
 .container{
 user-select:none;
 position:absolute;
-top:0;
 display: flex;
 justify-content:center;
 align-items:center;
@@ -366,14 +365,14 @@ let isDragging = false;
 
 function checkDirection() {
   if (endY > startY - 50) {
-    // Swiped left
+    // Swiped down
     let slides = document.querySelectorAll(".slides");
     slider.appendChild(slides[0]);
     count++;
     if (count == 12) count = 0;
     addCart();
-  } else if (endY > startY + 50) {
-    // Swiped right
+  } else if (endY < startY + 50) {
+    // Swiped up
     let slides = document.querySelectorAll(".slides");
     slider.prepend(slides[slides.length - 1]);
     if (count == 0) count = 12;
