@@ -40,17 +40,21 @@ align-items: center;
 -webkit-mask-image: linear-gradient(to right, black 0%, black 85%, transparent 100%);}
 
 .slider{
-display: flex;
+display:flex;
 justify-content:center;
-align-items: center;
-width:100vw;
+align-items:center;
+width:250px;
+height:350px;
+cursor:grab;
 list-style:none;}
 
 .arrows{
-position: absolute;
+position:absolute;
 height:50px;
 display:flex;
-column-gap:200px;}
+column-gap:200px;
+pointer-events:none;
+display:none;}
 
 .slides:nth-child(1){
 transform: translateX(-40px);
@@ -82,14 +86,14 @@ width:250px;
 height:350px;
 filter:brightness(100%);}
 
-.slides:nth-child(6),.slides:nth-child(7),.slides:nth-child(8), .slides:nth-child(9), .slides:nth-child(10), .slides:nth-child(11), .slides:nth-child(12){
+.slides:nth-child(n+6) {
 transform: translateX(100vw);
 width:270px;
 height:370px;
 filter:brightness(90%);}
 
 .slides{
-position: absolute;
+position:absolute;
 transition:0.5s;
 background-image:var(--img);
 background-size:cover;
@@ -108,7 +112,8 @@ border-radius: 50%;
 cursor: pointer;
 font-size: 1.25 rem;
 box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
-transition: 0.3s ease;}
+transition: 0.3s ease;
+pointer-events:auto;}
 
 .arrows svg:active{
 transform:translateY(0%) scale(0.85);}
@@ -170,14 +175,14 @@ width:25px;
 transform:scale(1);
 opacity:1;}
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
 
 body {
 background-image:url("Kids1/background1.jpg");}
 
 }
 
-@media screen and (min-width: 601px) {
+@media screen and (min-width: 701px) {
 
 body {
 background-image:url("Kids1/background2.jpg");}
@@ -194,62 +199,62 @@ background-image:url("Kids1/background2.jpg");}
 
 <ul class="slider">
 
-<li class="slides" style="--img:url(Kids1/kid1.jpg);">
+<li class="slides" style="--img:url(Kids1/Kid1.jpg);">
 <h3>Lisa</h3>
 <span>13th Jan 2015</span>
 </li>
 
-<li class="slides" style="--img:url(Kids1/kid2.jpg);">
+<li class="slides" style="--img:url(Kids1/Kid2.jpg);">
 <h3>Natalie</h3>
 <span>17th Mar 2014</span>
 </li>
 
-<li class="slides" style="--img:url(Kids1/kid3.jpg);">
+<li class="slides" style="--img:url(Kids1/Kid3.jpg);">
 <h3>Rose</h3>
 <span>11th Nov 2009</span>
 </li>
 
-<li class="slides" style="--img:url(Kids1/kid4.jpg);">
+<li class="slides" style="--img:url(Kids1/Kid4.jpg);">
 <h3>Amalia</h3>
 <span>16th Dec 2010</span>
 </li>
 
-<li class="slides" style="--img:url(Kids1/kid5.jpg);">
+<li class="slides" style="--img:url(Kids1/Kid5.jpg);">
 <h3>Christina</h3>
 <span>21th May 2012</span>
 </li>
 
-<li class="slides" style="--img:url(Kids1/kid6.jpg);">
+<li class="slides" style="--img:url(Kids1/Kid6.jpg);">
 <h3>Gwen</h3>
 <span>8th July 2006</span>
 </li>
 
-<li class="slides" style="--img:url(Kids1/kid7.jpg);">
+<li class="slides" style="--img:url(Kids1/Kid7.jpg);">
 <h3>Katie</h3>
 <span>2th Feb 2005</span>
 </li>
 
-<li class="slides" style="--img:url(Kids1/kid8.jpg);">
+<li class="slides" style="--img:url(Kids1/Kid8.jpg);">
 <h3>Martina</h3>
 <span>13th Oct 2007</span>
 </li>
 
-<li class="slides" style="--img:url(Kids1/kid9.jpg);">
+<li class="slides" style="--img:url(Kids1/Kid9.jpg);">
 <h3>Lola</h3>
 <span>19th Nov 2012</span>
 </li>
 
-<li class="slides" style="--img:url(Kids1/kid10.jpg);">
+<li class="slides" style="--img:url(Kids1/Kid10.jpg);">
 <h3>Sophia</h3>
 <span>23th Mar 2011</span>
 </li>
 
-<li class="slides" style="--img:url(Kids1/kid11.jpg);">
+<li class="slides" style="--img:url(Kids1/Kid11.jpg);">
 <h3>Kaila</h3>
 <span>7th Jan 2015</span>
 </li>
 
-<li class="slides" style="--img:url(Kids1/kid12.jpg);">
+<li class="slides" style="--img:url(Kids1/Kid12.jpg);">
 <h3>Klara</h3>
 <span>12th April 2010</span>
 </li>
@@ -301,14 +306,6 @@ let indicator = document.querySelector(".indicator");
 const Slides = document.querySelectorAll(".slides");
 const Dots = document.querySelectorAll(".dot");
 
-//Check if the user uses touchscreen or not
-if ("ontouchstart" in document.documentElement)
-
-{Arrows.style.display="none";}
-
-else {Arrows.style.display="flex";}
-
-
 //Indicator
 let count = 0;
 
@@ -339,34 +336,67 @@ addCart();
 });
 
 //Drag
-let touchstartX = 0;
-let touchendX = 0;
-    
+let startX = 0;
+let endX = 0;
+let isDragging = false;
+
 function checkDirection() {
-
-if (touchendX < touchstartX)
-{let Slides = document.querySelectorAll(".slides");
-slider.appendChild(Slides[0]);
-count++;
-if(count==12){count=0};
-addCart();}
-
-else if(touchendX > touchstartX)
-{let Slides = document.querySelectorAll(".slides");
-slider.prepend(Slides[Slides.length - 1]);
-if(count==0){count=12};
-count--;
-addCart();}; 
-
+  if (endX < startX - 50) {
+    // Swiped left
+    let slides = document.querySelectorAll(".slides");
+    slider.appendChild(slides[0]);
+    count++;
+    if (count == 12) count = 0;
+    addCart();
+  } else if (endX > startX + 50) {
+    // Swiped right
+    let slides = document.querySelectorAll(".slides");
+    slider.prepend(slides[slides.length - 1]);
+    if (count == 0) count = 12;
+    count--;
+    addCart();
+  }
 }
 
-
+// Touch events
 slider.addEventListener('touchstart', (e) => {
-touchstartX = e.changedTouches[0].screenX;});
+  startX = e.touches[0].clientX;
+});
 
 slider.addEventListener('touchend', (e) => {
-touchendX = e.changedTouches[0].screenX
-checkDirection();});
+  endX = e.changedTouches[0].clientX;
+  checkDirection();
+});
+
+// Mouse events
+slider.addEventListener('mousedown', (e) => {
+  isDragging = true;
+  startX = e.clientX;
+  slider.style.cursor="grab";
+});
+
+slider.addEventListener('mousemove', (e) => {
+  if (!isDragging) return;
+  endX = e.clientX;
+  slider.style.cursor="grabbing";
+});
+
+slider.addEventListener('mouseup', (e) => {
+  if (!isDragging) return;
+  isDragging = false;
+  endX = e.clientX;
+  checkDirection();
+  slider.style.cursor="grab";
+});
+
+slider.addEventListener('mouseleave', () => {
+  // In case the mouse leaves the slider during dragging
+  if (isDragging) {
+    isDragging = false;
+    checkDirection();
+  }
+});
+
 
 </script>
 
