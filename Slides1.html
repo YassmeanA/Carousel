@@ -181,11 +181,11 @@ opacity:1;}
 const Cards = document.querySelectorAll(".card");
 const Wrapper = document.querySelector(".wrapper");
 
-if(window.innerWidth < (Cards[1].offsetWidth + 10)*(Cards.length - 1) + Cards[0].offsetWidth + 10){Wrapper.style.justifyContent="start";}else{Wrapper.style.justifyContent="center";};
+if(window.innerWidth < 750){Wrapper.style.justifyContent="start";}else{Wrapper.style.justifyContent="center";};
 
 window.addEventListener("resize", () => {
 
-if(window.innerWidth < (Cards[1].offsetWidth + 10)*(Cards.length - 1) + Cards[0].offsetWidth + 10){Wrapper.style.justifyContent="start";}else{Wrapper.style.justifyContent="center";};
+if(window.innerWidth < 750){Wrapper.style.justifyContent="start";}else{Wrapper.style.justifyContent="center";};
 
 });
 
