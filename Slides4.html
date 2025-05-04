@@ -32,31 +32,33 @@ background-size:cover;
 background-position:center;}
 
 .wrapper{
-width:100vw;
+margin:0 calc(50vw - 180px);
 height:350px;
 display:flex;
-justify-content:center;
+justify-content:start;
 align-items:center;
-overflow: auto;}
+overflow-x:auto;
+overflow-y:hidden;
+transition:0.4s cubic-bezier(0.5,0,0.5,1);}
 
 .carousel {
 height:100%;
 margin:20px 10px;
-display: flex;
+display:flex;
 column-gap:10px;
 align-items:center;
 justify-content:center;
-flex-wrap:nowrap;
-transition:0.4s;}
+flex-wrap:nowrap;}
 
 .wrapper::-webkit-scrollbar {
 display:none;}
 
 .carousel::-webkit-scrollbar {
 display:none;}
+
 .card{
 position:relative;
-height: 200px;
+height:200px;
 list-style: none;
 border-radius:5px;
 width:60px;
@@ -64,8 +66,8 @@ overflow:hidden;
 display: flex;
 align-items: center;
 justify-content: center;
-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-transition: 0.4s cubic-bezier(0.5,0,0.5,1);
+box-shadow:0 5px 10px rgba(0, 0, 0, 0.1);
+transition:0.4s cubic-bezier(0.5,0,0.5,1);
 background:var(--i);
 background-size:cover;
 background-position:center;
@@ -147,6 +149,22 @@ left:0;
 height:100vh;
 width:100vw;}
 
+@media screen and (max-width: 360px) {
+
+.wrapper {
+--i1:0 calc(50vw - 180px);
+--i2:0 calc(50vw - 180px);}
+
+}
+
+@media screen and (min-width: 361px) {
+
+.wrapper {
+--i1:0 calc(50vw - 180px);
+--i2:0 calc(50vw - 300px);}
+
+}
+
 </style>
 
 </head>
@@ -201,34 +219,24 @@ width:100vw;}
 <script>
 
 const Wrapper = document.querySelector(".wrapper");
-const buttons = document.querySelectorAll(".card");
+const Cards = document.querySelectorAll(".card");
 
-function updateJustifyContent() {
 
-if (window.innerWidth >= 70 * (buttons.length - 1) + 310) {
-Wrapper.style.justifyContent = "center";
-} else {
-Wrapper.style.justifyContent = "start";
-}
-}
+Cards.forEach(Card => {
 
-// Initial check
-updateJustifyContent();
+Card.addEventListener("click", () => {
+Cards.forEach(card => {
+if (card !== Card && card.classList.contains("active")) {card.classList.remove("active");}});
+Card.classList.toggle("active");
 
-// Re-check on resize
-window.addEventListener("resize", updateJustifyContent);
+if(Card.classList.contains("active")){Wrapper.style.margin="var(--i2)";}else{Wrapper.style.margin="var(--i1)";};
 
-buttons.forEach(button => {
-
-button.addEventListener("click", () => {
-buttons.forEach(btn => {
-if (btn !== button && btn.classList.contains("active")) {btn.classList.remove("active");}});
-button.classList.toggle("active");
 });
 
+
 W.addEventListener("click", () => {
-buttons.forEach(btn => {
-if (btn.classList.contains("active")) {btn.classList.remove("active");}});
+Cards.forEach(card => {
+if (card.classList.contains("active")) {card.classList.remove("active");Wrapper.style.margin="var(--i1)";};});
 
 });
 
