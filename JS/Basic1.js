@@ -38,55 +38,65 @@ if ("ontouchstart" in document.documentElement)
 else {carousel.classList.add("mouse");carousel.classList.remove("touch");}
 
 //Dragging by mouse
-if(carousel.classList.contains("mouse")){
-
-let isDragging = false, startX, startScrollLeft;
-
-const snapToNearestCard = () => {
-  // Calculate the index of the closest slide
-  const scrollLeft = carousel.scrollLeft;
-  const index = Math.round(scrollLeft / firstCardWidth);
-
-  // Scroll to the nearest slide
-  carousel.scrollTo({
-  left: index * firstCardWidth,
-  behavior: "smooth"
-});
-
-};
-
-const dragStart = (e) => {
-  stopAutoplay();
-  isDragging = true;
-  carousel.style.cursor="grab";
-  carousel.classList.add("dragging");
-  startX = e.pageX;
-  startScrollLeft = carousel.scrollLeft;
-
-};
-
-const dragging = (e) => {
-  if (!isDragging) return;
-  carousel.style.cursor="grabbing";
-  e.preventDefault(); // Prevent image/text selection while dragging
-  carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
-};
-
-const dragStop = () => {
-  startAutoplay();
-  isDragging = false;
-  carousel.style.cursor="grab";
-  snapToNearestCard();
-  setTimeout(() => {carousel.classList.remove("dragging");},300);
-
-};
-
-carousel.addEventListener("mousedown", dragStart);
-carousel.addEventListener("mousemove", dragging);
-document.addEventListener("mouseup", dragStop);
-
-}
-
+    if(carousel.classList.contains("mouse")){
+    
+      let isDragging = false,
+        hasDragged = false,
+        startX,
+        startScrollLeft;
+    
+    const dragThreshold = 5; // pixels
+    
+    const snapToNearestCard = () => {
+      const scrollLeft = carousel.scrollLeft;
+      const index = Math.round(scrollLeft / firstCardWidth);
+      carousel.scrollTo({
+        left: index * firstCardWidth,
+        behavior: "smooth"
+      });
+    };
+    
+    const dragStart = (e) => {
+      stopAutoplay();
+      isDragging = true;
+      hasDragged = false;
+      carousel.style.cursor = "grab";
+      carousel.classList.add("dragging");
+      startX = e.pageX;
+      startScrollLeft = carousel.scrollLeft;
+    };
+    
+    const dragging = (e) => {
+      if (!isDragging) return;
+    
+      const moved = Math.abs(e.pageX - startX);
+      if (moved > dragThreshold) {
+        hasDragged = true;
+        carousel.style.cursor = "grabbing";
+        e.preventDefault(); // Prevent text/image selection
+        carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
+      }
+    };
+    
+    const dragStop = () => {
+      if (!isDragging) return;
+      isDragging = false;
+      carousel.style.cursor = "grab";
+      if (hasDragged) {
+        snapToNearestCard();
+      }
+      setTimeout(() => {
+        carousel.classList.remove("dragging");
+      }, 300);
+    
+        startAutoplay();
+    };
+    
+    carousel.addEventListener("mousedown", dragStart);
+    carousel.addEventListener("mousemove", dragging);
+    document.addEventListener("mouseup", dragStop);
+      
+    }
 
 function applyScroll() {
   carousel.scrollLeft = currentIndex * firstCardWidth;
