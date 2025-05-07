@@ -228,7 +228,7 @@ if(Card.classList.contains("active")){Wrapper.style.margin="var(--i2)";}else{Wra
 
 }
 
-resertPadding();
+resetPadding();
 window.addEventListener("resize",resetPadding);
   
 Cards.forEach(Card => {
@@ -238,7 +238,7 @@ Cards.forEach(card => {
 if (card !== Card && card.classList.contains("active")) {card.classList.remove("active");}});
 Card.classList.toggle("active");
 
-resertPadding();
+resetPadding();
 window.addEventListener("resize",resetPadding);
   
 });
@@ -248,7 +248,7 @@ W.addEventListener("click", () => {
 Cards.forEach(Card => {
 if (Card.classList.contains("active")) {Card.classList.remove("active");Wrapper.style.margin="var(--i1)";};});
 
-resertPadding();
+resetPadding();
 window.addEventListener("resize",resetPadding);
   
 });
