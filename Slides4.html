@@ -16,39 +16,40 @@ html {
 scroll-behavior:smooth;}
 
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 font-family:Sans-serif;}
 
 body {
-display: flex;
-align-items: center;
-min-height: 100vh;
-background: rgba(228, 220, 220,0.9);
+display:flex;
+align-items:center;
+min-height:100vh;
+background:rgba(228, 220, 220,0.9);
 background-image:url(Books/Books.jpg);
-background-blend-mode: lighten;
+background-blend-mode:lighten;
 background-size:cover;
 background-position:center;}
 
 .wrapper{
-margin:0 calc(50vw - 180px);
+    background:red;
+padding:20px 10px;
+width:100vw;
 height:350px;
 display:flex;
 justify-content:start;
 align-items:center;
-overflow-x:auto;
-overflow-y:hidden;
-transition:0.4s cubic-bezier(0.5,0,0.5,1);}
+overflow-x:auto;}
 
 .carousel {
+  background:blue;
 height:100%;
-margin:20px 10px;
 display:flex;
 column-gap:10px;
 align-items:center;
 justify-content:center;
-flex-wrap:nowrap;}
+flex-wrap:nowrap;
+transition:0.4s cubic-bezier(0.5,0,0.5,1);}
 
 .wrapper::-webkit-scrollbar {
 display:none;}
@@ -152,18 +153,39 @@ width:100vw;}
 @media screen and (max-width: 360px) {
 
 .wrapper {
+--i1:start;
+--i2:start;}
+
+.carousel {
 --i1:0 calc(50vw - 180px);
 --i2:0 calc(50vw - 180px);}
 
 }
 
-@media screen and (min-width: 361px) {
+@media screen and (min-width: 361px) and (max-width: 600px){
 
 .wrapper {
+--i1:center;
+--i2:start;}
+
+.carousel {
 --i1:0 calc(50vw - 180px);
 --i2:0 calc(50vw - 300px);}
 
 }
+
+@media screen and (min-width: 600px){
+
+.wrapper {
+--i1:center;
+--i2:center;}
+
+.carousel {
+--i1:0 calc(50vw - 180px);
+--i2:0 calc(50vw - 300px);}
+
+}
+
 
 </style>
 
@@ -219,18 +241,10 @@ width:100vw;}
 <script>
 
 const Wrapper = document.querySelector(".wrapper");
+const carousel = document.querySelector(".carousel");
 const Cards = document.querySelectorAll(".card");
 
-function resetPadding() {
 
-Cards.forEach(Card => {
-if(Card.classList.contains("active")){Wrapper.style.margin="var(--i2)";}else{Wrapper.style.margin="var(--i1)";};}); 
-
-}
-
-resetPadding();
-window.addEventListener("resize",resetPadding);
-  
 Cards.forEach(Card => {
 
 Card.addEventListener("click", () => {
@@ -238,23 +252,19 @@ Cards.forEach(card => {
 if (card !== Card && card.classList.contains("active")) {card.classList.remove("active");}});
 Card.classList.toggle("active");
 
-resetPadding();
-window.addEventListener("resize",resetPadding);
-  
+if(Card.classList.contains("active")){carousel.style.padding="var(--i2)";Wrapper.style.justifyContent="var(--i2)";}else{carousel.style.padding="var(--i1)";Wrapper.style.justifyContent="var(--i1)";};
+
 });
 
 
 W.addEventListener("click", () => {
-Cards.forEach(Card => {
-if (Card.classList.contains("active")) {Card.classList.remove("active");Wrapper.style.margin="var(--i1)";};});
+Cards.forEach(card => {
+if (card.classList.contains("active")) {card.classList.remove("active");carousel.style.padding="var(--i1)";Wrapper.style.justifyContent="var(--i1)";};});
 
-resetPadding();
-window.addEventListener("resize",resetPadding);
-  
 });
 
 });
-  
+
 </script>
 
 </body>
