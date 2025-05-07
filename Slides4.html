@@ -221,7 +221,16 @@ width:100vw;}
 const Wrapper = document.querySelector(".wrapper");
 const Cards = document.querySelectorAll(".card");
 
+function resetPadding() {
 
+Cards.forEach(Card => {
+if(Card.classList.contains("active")){Wrapper.style.margin="var(--i2)";}else{Wrapper.style.margin="var(--i1)";};}); 
+
+}
+
+resertPadding();
+window.addEventListener("resize",resertPadding);
+  
 Cards.forEach(Card => {
 
 Card.addEventListener("click", () => {
@@ -229,17 +238,19 @@ Cards.forEach(card => {
 if (card !== Card && card.classList.contains("active")) {card.classList.remove("active");}});
 Card.classList.toggle("active");
 
-if(Card.classList.contains("active")){Wrapper.style.margin="var(--i2)";}else{Wrapper.style.margin="var(--i1)";};
-
+resertPadding();
+window.addEventListener("resize",resertPadding);
+  
 });
 
 
 W.addEventListener("click", () => {
-Cards.forEach(card => {
-if (card.classList.contains("active")) {card.classList.remove("active");Wrapper.style.margin="var(--i1)";};});
+Cards.forEach(Card => {
+if (Card.classList.contains("active")) {Card.classList.remove("active");Wrapper.style.margin="var(--i1)";};});
 
-});
-
+resertPadding();
+window.addEventListener("resize",resertPadding);
+  
 });
 
 </script>
