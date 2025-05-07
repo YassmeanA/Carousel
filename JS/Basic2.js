@@ -78,7 +78,7 @@ function setupDots() {
 
   if (slidesInView >= slides.length / 2) {slidesInView = slides.length / 2;} 
 
-  if (window.innerWidth >= slides.length * firstSlideWidth + 10) {wrapper.style.width = `${slides.length * firstSlideWidth - 10}px`;carousel.style.justifyContent="center";}else{wrapper.style.width = "100vw";carousel.style.justifyContent="start";}
+  if (window.innerWidth >= slides.length * firstSlideWidth + 10) {wrapper.style.width = `${slides.length * firstSlideWidth + 10}px`;carousel.style.justifyContent="center";}else{wrapper.style.width = "100vw";carousel.style.justifyContent="start";}
 
   const totalDots = Math.round(slides.length / slidesInView);
   const dots = [];
