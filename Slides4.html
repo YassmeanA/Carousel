@@ -24,6 +24,7 @@ font-family:Sans-serif;}
 body {
 display:flex;
 align-items:center;
+overflow-x:hidden;
 min-height:100vh;
 background:rgba(228, 220, 220,0.9);
 background-image:url(Books/Books.jpg);
@@ -51,13 +52,11 @@ justify-content:center;
 flex-wrap:nowrap;
 list-style:none;}
 
-.wrapper::-webkit-scrollbar {
-display:none;}
-
-.carousel::-webkit-scrollbar {
+.wrapper::-webkit-scrollbar, .carousel::-webkit-scrollbar {
 display:none;}
 
 .card{
+flex-shrink:0;
 position:relative;
 height:200px;
 border-radius:5px;
