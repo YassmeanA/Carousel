@@ -32,7 +32,7 @@ background-size:cover;
 background-position:center;}
 
 .wrapper{
-margin:0 calc(50vw - 180px);
+  margin: var(--wrapper-margin, 0 calc(50vw - 180px));
 background:red;
 height:350px;
 display:flex;
@@ -150,28 +150,30 @@ height:100vh;
 width:100vw;}
 
 @media screen and (max-width: 360px) {
-
-.wrapper {
---i1:0 10px;
---i2:0 10px;}
-
+  .wrapper {
+    --i1: 0 10px;
+    --i2: 0 10px;
+    --wrapper-margin: 0 10px;
+  }
 }
 
-@media screen and (min-width: 361px) and (max-width: 600px){
-
-.wrapper {
---i1:0 calc(50vw - 180px);
---i2:0 10px;}
-
+@media screen and (min-width: 361px) and (max-width: 600px) {
+  .wrapper {
+    --i1: 0 10px;
+    --i2: 0 10px;
+    --wrapper-margin: 0 10px;
+  }
 }
 
-@media screen and (min-width: 600px){
-
-.wrapper {
---i1:0 calc(50vw - 180px);
---i2:0 calc(50vw - 300px);}
-
+@media screen and (min-width: 601px) {
+  .wrapper {
+    --i1: 0 calc((100vw - 360px) / 2);
+    --i2: 0 calc((100vw - 600px) / 2);
+    --wrapper-margin: 0 calc((100vw - 360px) / 2);
+  }
 }
+
+
 
 
 </style>
