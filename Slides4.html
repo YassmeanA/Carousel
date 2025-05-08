@@ -150,7 +150,7 @@ width:100vw;}
 
 @media screen and (max-width: 360px) {
 
-.carousel {
+.wrapper {
 --i1:0 10px;
 --i2:0 10px;}
 
@@ -158,7 +158,7 @@ width:100vw;}
 
 @media screen and (min-width: 361px) and (max-width: 600px){
 
-.carousel {
+.wrapper {
 --i1:0 calc(50vw - 180px);
 --i2:0 10px;}
 
@@ -166,7 +166,7 @@ width:100vw;}
 
 @media screen and (min-width: 600px){
 
-.carousel {
+.wrapper {
 --i1:0 calc(50vw - 180px);
 --i2:0 calc(50vw - 300px);}
 
@@ -238,14 +238,14 @@ Cards.forEach(card => {
 if (card !== Card && card.classList.contains("active")) {card.classList.remove("active");}});
 Card.classList.toggle("active");
 
-if(Card.classList.contains("active")){carousel.style.padding="var(--i2)";}else{carousel.style.padding="var(--i1)";};
+if(Card.classList.contains("active")){Wrapper.style.margin="var(--i2)";}else{Wrapper.style.margin="var(--i1)";};
 
 });
 
 
 W.addEventListener("click", () => {
 Cards.forEach(card => {
-if (card.classList.contains("active")) {card.classList.remove("active");carousel.style.padding="var(--i1)";};});
+if (card.classList.contains("active")) {card.classList.remove("active");Wrapper.style.margin="var(--i1)";};});
 
 });
 
