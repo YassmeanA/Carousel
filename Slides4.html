@@ -35,14 +35,14 @@ background-position:center;}
 margin:0 calc(50vw - 180px);
 height:350px;
 display:flex;
-
+justify-content:start;
 align-items:center;
 overflow-x:auto;
+overflow-y: hidden;
 transition:0.4s cubic-bezier(0.5,0,0.5,1);}
 
 .carousel {
-  margin:20px 10px;
-background:blue;
+margin:20px 10px;
 height:100%;
 display:flex;
 column-gap:10px;
@@ -63,9 +63,9 @@ height:200px;
 border-radius:5px;
 width:60px;
 overflow:hidden;
-display:flex;
-align-items:center;
-justify-content:center;
+display: flex;
+align-items: center;
+justify-content: center;
 box-shadow:0 5px 10px rgba(0, 0, 0, 0.1);
 transition:0.4s cubic-bezier(0.5,0,0.5,1);
 background:var(--i);
@@ -85,14 +85,14 @@ color:white;
 transition:0.4s;}
 
 .card h3 {
-position: absolute;
+position:absolute;
 width:300px;
 left:0;
 bottom:15px;
 opacity:0;
 user-select:none;
-font-weight: 500;
-font-size: 0.9rem;
+font-weight:500;
+font-size:0.9rem;
 color:white;
 padding:10px;
 transition:0.4s;
@@ -149,7 +149,7 @@ left:0;
 height:100vh;
 width:100vw;}
 
-  @media screen and (max-width: 360px) {
+@media screen and (max-width: 360px) {
 
 .wrapper {
 --i1:0 calc(50vw - 180px);
@@ -157,7 +157,7 @@ width:100vw;}
 
 }
 
-@media screen and (min-width: 361px){
+@media screen and (min-width: 361px) {
 
 .wrapper {
 --i1:0 calc(50vw - 180px);
@@ -238,7 +238,7 @@ if(Card.classList.contains("active")){Wrapper.style.margin="var(--i2)";}else{Wra
 
 W.addEventListener("click", () => {
 Cards.forEach(card => {
-if (card.classList.contains("active")) {card.classList.remove("active");Wrapper.style.margin="var(--i1)";};});
+if (card.classList.contains("active")) {card.classList.remove("active");Wrapper.style.padding="var(--i1)";};});
 
 });
 
