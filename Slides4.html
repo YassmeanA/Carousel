@@ -32,8 +32,7 @@ background-size:cover;
 background-position:center;}
 
 .wrapper{
-  margin: var(--wrapper-margin, 0 calc(50vw - 180px));
-background:red;
+margin:0 calc(50vw - 180px);
 height:350px;
 display:flex;
 justify-content:start;
@@ -42,13 +41,14 @@ overflow-x:auto;
 transition:0.4s cubic-bezier(0.5,0,0.5,1);}
 
 .carousel {
-  background:blue;
+background:blue;
 height:100%;
 display:flex;
 column-gap:10px;
 align-items:center;
 justify-content:center;
-flex-wrap:nowrap;}
+flex-wrap:nowrap;
+list-style:none;}
 
 .wrapper::-webkit-scrollbar {
 display:none;}
@@ -59,13 +59,12 @@ display:none;}
 .card{
 position:relative;
 height:200px;
-list-style: none;
 border-radius:5px;
 width:60px;
 overflow:hidden;
-display: flex;
-align-items: center;
-justify-content: center;
+display:flex;
+align-items:center;
+justify-content:center;
 box-shadow:0 5px 10px rgba(0, 0, 0, 0.1);
 transition:0.4s cubic-bezier(0.5,0,0.5,1);
 background:var(--i);
@@ -149,31 +148,21 @@ left:0;
 height:100vh;
 width:100vw;}
 
-@media screen and (max-width: 360px) {
-  .wrapper {
-    --i1: 0 10px;
-    --i2: 0 10px;
-    --wrapper-margin: 0 10px;
-  }
+  @media screen and (max-width: 360px) {
+
+.wrapper {
+--i1:0 calc(50vw - 180px);
+--i2:0 calc(50vw - 180px);}
+
 }
 
-@media screen and (min-width: 361px) and (max-width: 600px) {
-  .wrapper {
-    --i1: 0 10px;
-    --i2: 0 10px;
-    --wrapper-margin: 0 10px;
-  }
+@media screen and (min-width: 361px){
+
+.wrapper {
+--i1:0 calc(50vw - 180px);
+--i2:0 0 calc(50vw - 300px);}
+
 }
-
-@media screen and (min-width: 601px) {
-  .wrapper {
-    --i1: 0 calc((100vw - 360px) / 2);
-    --i2: 0 calc((100vw - 600px) / 2);
-    --wrapper-margin: 0 calc((100vw - 360px) / 2);
-  }
-}
-
-
 
 
 </style>
