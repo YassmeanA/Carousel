@@ -32,11 +32,12 @@ background-size:cover;
 background-position:center;}
 
 .wrapper{
-    background:red;
+background:red;
 padding:20px 10px;
 width:100vw;
 height:350px;
 display:flex;
+justify-content:start;
 align-items:center;
 overflow-x:auto;}
 
@@ -151,33 +152,21 @@ width:100vw;}
 
 @media screen and (max-width: 360px) {
 
-.wrapper {
---i1:start;
---i2:start;}
-
 .carousel {
---i1:0 calc(50vw - 180px);
---i2:0 calc(50vw - 180px);}
+--i1:0 10px;
+--i2:0 10px;}
 
 }
 
 @media screen and (min-width: 361px) and (max-width: 600px){
 
-.wrapper {
---i1:center;
---i2:start;}
-
 .carousel {
 --i1:0 calc(50vw - 180px);
---i2:0 calc(50vw - 300px);}
+--i2:0 10px;}
 
 }
 
 @media screen and (min-width: 600px){
-
-.wrapper {
---i1:center;
---i2:center;}
 
 .carousel {
 --i1:0 calc(50vw - 180px);
@@ -251,14 +240,14 @@ Cards.forEach(card => {
 if (card !== Card && card.classList.contains("active")) {card.classList.remove("active");}});
 Card.classList.toggle("active");
 
-if(Card.classList.contains("active")){carousel.style.padding="var(--i2)";Wrapper.style.justifyContent="var(--i2)";}else{carousel.style.padding="var(--i1)";Wrapper.style.justifyContent="var(--i1)";};
+if(Card.classList.contains("active")){carousel.style.padding="var(--i2)";}else{carousel.style.padding="var(--i1)";};
 
 });
 
 
 W.addEventListener("click", () => {
 Cards.forEach(card => {
-if (card.classList.contains("active")) {card.classList.remove("active");carousel.style.padding="var(--i1)";Wrapper.style.justifyContent="var(--i1)";};});
+if (card.classList.contains("active")) {card.classList.remove("active");carousel.style.padding="var(--i1)";};});
 
 });
 
