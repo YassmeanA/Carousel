@@ -11,161 +11,170 @@
 
 <style>
 
-html {
--webkit-tap-highlight-color: transparent;
-scroll-behavior:smooth;}
+html, body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
 
 * {
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Sans-serif;}
+  box-sizing: border-box;
+  font-family: Sans-serif;
+}
 
 body {
-overflow-x:hidden;
-display:flex;
-align-items:center;
-min-height:100vh;
-background:rgba(228, 220, 220,0.9);
-background-image:url(Books/Books.jpg);
-background-blend-mode:lighten;
-background-size:cover;
-background-position:center;}
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: rgba(228, 220, 220, 0.9);
+  background-image: url(Books/Books.jpg);
+  background-blend-mode: lighten;
+  background-size: cover;
+  background-position: center;
+  overflow-x: hidden;
+}
 
-.wrapper{
-margin:0 calc(50vw - 180px);
-height:350px;
-display:flex;
-justify-content:start;
-align-items:center;
-overflow-x:auto;
-overflow-y: hidden;
-transition:0.4s cubic-bezier(0.5,0,0.5,1);}
+.wrapper {
+  height: 350px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  transition: 0.4s cubic-bezier(0.5, 0, 0.5, 1);
+  margin: 0 auto;
+  max-width: calc(100vw - 20px);
+  padding: 0 10px;
+}
 
 .carousel {
-margin:20px 10px;
-height:100%;
-display:flex;
-column-gap:10px;
-align-items:center;
-justify-content:center;
-flex-wrap:nowrap;
-list-style:none;}
+  margin: 20px 10px;
+  height: 100%;
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  list-style: none;
+}
 
-.wrapper::-webkit-scrollbar {
-display:none;}
-
+.wrapper::-webkit-scrollbar,
 .carousel::-webkit-scrollbar {
-display:none;}
+  display: none;
+}
 
-.card{
-position:relative;
-height:200px;
-border-radius:5px;
-width:60px;
-overflow:hidden;
-display: flex;
-align-items: center;
-justify-content: center;
-box-shadow:0 5px 10px rgba(0, 0, 0, 0.1);
-transition:0.4s cubic-bezier(0.5,0,0.5,1);
-background:var(--i);
-background-size:cover;
-background-position:center;
-cursor:pointer;}
+.card {
+  position: relative;
+  height: 200px;
+  border-radius: 5px;
+  width: 60px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.4s cubic-bezier(0.5, 0, 0.5, 1);
+  background: var(--i);
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
 
 .card h2 {
-z-index:1;
-writing-mode:vertical-lr;
-text-orientation:upright;
-letter-spacing:6px;
-user-select:none;
-font-weight:500;
-font-size:0.85rem;
-color:white;
-transition:0.4s;}
+  z-index: 1;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  letter-spacing: 6px;
+  user-select: none;
+  font-weight: 500;
+  font-size: 0.85rem;
+  color: white;
+  transition: 0.4s;
+}
 
 .card h3 {
-position:absolute;
-width:300px;
-left:0;
-bottom:15px;
-opacity:0;
-user-select:none;
-font-weight:500;
-font-size:0.9rem;
-color:white;
-padding:10px;
-transition:0.4s;
-text-shadow:2px 2px 2px rgba(0,0,0,0.5);}
+  position: absolute;
+  width: 300px;
+  left: 0;
+  bottom: 15px;
+  opacity: 0;
+  user-select: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: white;
+  padding: 10px;
+  transition: 0.4s;
+  text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+}
 
 .card span {
-width:300px;
-position: absolute;
-opacity:0;
-left:0;
-bottom:-5px;
-user-select:none;
-font-weight: 300;
-font-size: 0.7rem;
-color:white;
-padding:10px;
-transition:0.4s;
-text-shadow:2px 2px 2px rgba(0,0,0,0.5);}
+  width: 300px;
+  position: absolute;
+  opacity: 0;
+  left: 0;
+  bottom: -5px;
+  user-select: none;
+  font-weight: 300;
+  font-size: 0.7rem;
+  color: white;
+  padding: 10px;
+  transition: 0.4s;
+  text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+}
 
-.dark{
-position:absolute;
-height:100%;
-width:100%;
-background:black;
-opacity:0.7;
-object-fit:cover;
-pointer-events:auto;
-transition:0.4s;}
+.dark {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: black;
+  opacity: 0.7;
+  object-fit: cover;
+  pointer-events: auto;
+  transition: 0.4s;
+}
 
-.card.active{
-width:300px;
-filter: brightness(100%);}
+.card.active {
+  width: 300px;
+  filter: brightness(100%);
+}
 
-.card.active h2{
-opacity:0;}
+.card.active h2 {
+  opacity: 0;
+}
 
-.card.active h3{
-opacity:1;
-left:10px;
-bottom:22px;}
+.card.active h3 {
+  opacity: 1;
+  left: 10px;
+  bottom: 22px;
+}
 
-.card.active span{
-opacity:1;
-left:10px;
-bottom:4px;}
+.card.active span {
+  opacity: 1;
+  left: 10px;
+  bottom: 4px;
+}
 
-.card.active .dark{
-opacity:0;}
+.card.active .dark {
+  opacity: 0;
+}
 
-.window{
-position:fixed;
-top:0;
-left:0;
-height:100vh;
-width:100vw;}
+.window {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+}
 
+/* Optional: Additional mobile-specific adjustments if needed */
 @media screen and (max-width: 360px) {
-
-.wrapper {
---i1:0 calc(50vw - 180px);
---i2:0 calc(50vw - 180px);}
-
+  .wrapper {
+    max-width: 100vw;
+    padding: 0 10px;
+  }
 }
-
-@media screen and (min-width: 361px) {
-
-.wrapper {
---i1:0 calc(50vw - 180px);
---i2:0 calc(50vw - 300px);}
-
-}
-
 
 </style>
 
@@ -176,46 +185,42 @@ width:100vw;}
 <div id="W" class="window"></div>
 
 <div class="wrapper">
+  <ul class="carousel">
+    <li class="card" style="height:200px;--i:url('Books/book1.jpg');">
+      <div class="dark"></div>
+      <h2>CLASSIC</h2>
+      <h3>Anne de Ingleside</h3>
+      <span>L.M. Montgomery</span>
+    </li>
 
-<ul class="carousel">
+    <li class="card" style="height:250px;--i:url('Books/book2.jpg');">
+      <div class="dark"></div>
+      <h2>FANTASY</h2>
+      <h3>A Dança da Floresta</h3>
+      <span>Juliet Marillier</span>
+    </li>
 
-<li class="card" style="height:200px;--i:url('Books/book1.jpg');">
-<div class="dark"></div>
-<h2>CLASSIC</h2>
-<h3>Anne de Ingleside</h3>
-<span>L.M. Montgomery</span>
-</li>
+    <li class="card" style="height:300px;--i:url('Books/book3.jpg');">
+      <div class="dark"></div>
+      <h2>HISTORICAL</h2>
+      <h3>Little Women</h3>
+      <span>Louisa May Alcott</span>
+    </li>
 
-<li class="card" style="height:250px;--i:url('Books/book2.jpg');">
-<div class="dark"></div>
-<h2>FANTASY</h2>
-<h3>A Dança da Floresta</h3>
-<span>Juliet Marillier</span>
-</li>
+    <li class="card" style="height:250px;--i:url('Books/book4.jpg');">
+      <div class="dark"></div>
+      <h2>MYTHOLOGY</h2>
+      <h3>The Girl in the Tower</h3>
+      <span>Katherine Arden</span>
+    </li>
 
-<li class="card" style="height:300px;--i:url('Books/book3.jpg');">
-<div class="dark"></div>
-<h2>HISTORICAL</h2>
-<h3>Little Women</h3>
-<span>Louisa May Alcott</span>
-</li>
-
-<li class="card" style="height:250px;--i:url('Books/book4.jpg');">
-<div class="dark"></div>
-<h2>MYTHOLOGY</h2>
-<h3>The Girl in the Tower</h3>
-<span>Katherine Arden</span>
-</li>
-
-<li class="card" style="height:200px;--i:url('Books/book5.jpg');">
-<div class="dark"></div>
-<h2>MAGIC</h2>
-<h3>Charting Stars</h3>
-<span>Micheline Ryckman</span>
-</li>
-
-</ul>
-
+    <li class="card" style="height:200px;--i:url('Books/book5.jpg');">
+      <div class="dark"></div>
+      <h2>MAGIC</h2>
+      <h3>Charting Stars</h3>
+      <span>Micheline Ryckman</span>
+    </li>
+  </ul>
 </div>
 
 <script>
@@ -223,26 +228,25 @@ width:100vw;}
 const Wrapper = document.querySelector(".wrapper");
 const carousel = document.querySelector(".carousel");
 const Cards = document.querySelectorAll(".card");
-
+const W = document.getElementById("W");
 
 Cards.forEach(Card => {
+  Card.addEventListener("click", () => {
+    Cards.forEach(card => {
+      if (card !== Card && card.classList.contains("active")) {
+        card.classList.remove("active");
+      }
+    });
+    Card.classList.toggle("active");
+  });
 
-Card.addEventListener("click", () => {
-Cards.forEach(card => {
-if (card !== Card && card.classList.contains("active")) {card.classList.remove("active");}});
-Card.classList.toggle("active");
-
-if(Card.classList.contains("active")){Wrapper.style.margin="var(--i2)";}else{Wrapper.style.margin="var(--i1)";};
-
-});
-
-
-W.addEventListener("click", () => {
-Cards.forEach(card => {
-if (card.classList.contains("active")) {card.classList.remove("active");Wrapper.style.padding="var(--i1)";};});
-
-});
-
+  W.addEventListener("click", () => {
+    Cards.forEach(card => {
+      if (card.classList.contains("active")) {
+        card.classList.remove("active");
+      }
+    });
+  });
 });
 
 </script>
