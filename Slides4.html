@@ -44,7 +44,8 @@ body {
   overflow-x: auto;
   overflow-y: hidden;
   transition: 0.4s cubic-bezier(0.5, 0, 0.5, 1);
-  margin: 0 auto;
+ 
+  margin: 0 calc(50vw - 180px);;
   max-width: calc(100vw - 20px);
   padding: 0 10px;
 }
@@ -168,12 +169,20 @@ body {
   width: 100vw;
 }
 
-/* Optional: Additional mobile-specific adjustments if needed */
-@media screen and (max-width: 360px) {
-  .wrapper {
-    max-width: 100vw;
-    padding: 0 10px;
-  }
+  @media screen and (max-width: 360px) {
+
+.wrapper {
+--i1:0 calc(50vw - 180px);
+--i2:0 calc(50vw - 180px);}
+
+}
+
+@media screen and (min-width: 361px) {
+
+.wrapper {
+--i1:0 calc(50vw - 180px);
+--i2:0 calc(50vw - 300px);}
+
 }
 
 </style>
@@ -238,12 +247,14 @@ Cards.forEach(Card => {
       }
     });
     Card.classList.toggle("active");
+    if(Card.classList.contains("active")){Wrapper.style.margin="var(--i2)";}else{Wrapper.style.margin="var(--i1)";};
+
   });
 
   W.addEventListener("click", () => {
     Cards.forEach(card => {
       if (card.classList.contains("active")) {
-        card.classList.remove("active");
+        card.classList.remove("active");Wrapper.style.margin="var(--i1)";
       }
     });
   });
