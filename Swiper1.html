@@ -14,53 +14,55 @@ html {
 scroll-behavior:smooth;}
 
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;}
+margin:0;
+padding:0;
+box-sizing:border-box;}
 
 body {
-font-family: Sans-serif;
-display: flex;
-align-items: center;
-justify-content: center;
-min-height: 200vh;
-overflow-x: hidden;
-background: linear-gradient(to bottom right, #F8EBA6, #FFD8C2);}
-
-.Container{
-position: absolute;
-top:50px;
-width:100vw;
-display: flex;
+font-family:Sans-serif;
+display:flex;
+align-items:center;
+justify-content:center;
 overflow-x:hidden;
-align-items: center;
-visibility: visible;
-justify-content: center;}
+background:linear-gradient(to bottom right, #F8EBA6, #FFD8C2);}
+
+.Container {
+position:absolute;
+width:100vw;
+height:111vw;
+display:flex;
+overflow:hidden;
+align-items:center;
+visibility:visible;
+justify-content:center;}
 
 .swiper {
 position:relative;
-max-width: 2200px;
+max-width:2200px;
 width:100vw;
+height:100%;
 display:flex;
-align-items: center;
-justify-content: center;}
+align-items:center;
+justify-content:center;}
 
 .swiper-wrapper {
 padding:50px 0;
-display: flex;
+width:100vw;
+height:90%;
+display:flex;
 align-items:center;
 list-style:none;}
 
 .swiper .controls .next ,.prev{
-height: 50px;
-width: 50px;
-background: white;
-border-radius: 50%;
-cursor: pointer;
-position: absolute;
+position:absolute;
+height:50px;
+width:50px;
+background:white;
+border-radius:50%;
+cursor:pointer;
 z-index:1;
-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-transition: 0.3s ease;}
+box-shadow:0 3px 6px rgba(0, 0, 0, 0.2);
+transition:0.3s ease;}
 
 .controls{
 position:absolute;
@@ -193,8 +195,9 @@ text-shadow:2px 2px 3px rgba(0,0,0,0.5);}
 .swiper-slide span {
 font-size:0.8rem;
 padding:10px;
-text-shadow:3px 3px 5px rgba(0,0,0,0.2);}}
+text-shadow:3px 3px 5px rgba(0,0,0,0.2);}
 
+}
 
 @media screen and (max-width: 600px) {
 
@@ -219,8 +222,9 @@ text-shadow:2px 2px 3px rgba(0,0,0,0.5);}
 .swiper-slide span {
 font-size:1rem;
 padding:15px;
-text-shadow:3px 3px 5px rgba(0,0,0,0.2);}}
+text-shadow:3px 3px 5px rgba(0,0,0,0.2);}
 
+}
 
 @media screen and (max-width: 400px) {
 
@@ -245,7 +249,9 @@ text-shadow:2px 2px 3px rgba(0,0,0,0.5);}
 .swiper-slide span {
 font-size:0.8rem;
 padding:10px;
-text-shadow:3px 3px 5px rgba(0,0,0,0.2);}}
+text-shadow:3px 3px 5px rgba(0,0,0,0.2);}
+
+}
 
 </style>
 
