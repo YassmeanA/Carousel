@@ -23,14 +23,13 @@ font-family:Sans-serif;
 display:flex;
 align-items:center;
 justify-content:center;
-min-height:100vh;
 overflow-x:hidden;
 background:linear-gradient(to bottom right, #F8EBA6, #FFD8C2);}
 
 .Container {
 position:absolute;
 width:100vw;
-height:111vw;
+height:calc(var(--i) + 120px);
 display:flex;
 overflow:hidden;
 align-items:center;
@@ -49,7 +48,7 @@ justify-content:center;}
 .swiper-wrapper {
 padding:50px 0;
 width:100vw;
-height:90%;
+height:100%;
 display:flex;
 align-items:center;
 list-style:none;}
@@ -138,7 +137,8 @@ transition: 0.3s ease;}
 
 .swiper-pagination{
 position: absolute;
-bottom:-10px;
+cursor:pointer;
+bottom:0;
 display:flex;
 align-items: center;
 justify-content:center;}
@@ -148,6 +148,9 @@ justify-content:center;}
 .controls{
 width:calc(40vw + 50px);}
 
+.Container {
+--i:35vw;}
+    
 .swiper-slide{
 width:40vw;
 height:35vw;}
@@ -178,6 +181,9 @@ text-decoration:none;}
 .controls{
 width:calc(50vw + 50px);}
 
+.Container {
+--i:40vw;}
+                           
 .swiper-slide{
 width:50vw;
 height:40vw;}
@@ -205,6 +211,9 @@ text-shadow:3px 3px 5px rgba(0,0,0,0.2);}
 .controls{
 width:calc(70vw + 50px);}
 
+.Container {
+--i:60vw;}
+    
 .swiper-slide{
 width:70vw;
 height:60vw;}
@@ -232,6 +241,9 @@ text-shadow:3px 3px 5px rgba(0,0,0,0.2);}
 .controls{
 width:calc(80vw + 50px);}
 
+.Container {
+--i:70vw;}
+    
 .swiper-slide{
 width:80vw;
 height:70vw;}
@@ -397,6 +409,24 @@ text-shadow:3px 3px 5px rgba(0,0,0,0.2);}
 
 const wrapper = document.querySelector(".swiper");
 
+let X;
+
+function HeightOfBody() {
+
+if(window.innerWidth <= 400){X = 0.7}
+else if (window.innerWidth > 400 && window.innerWidth <= 600){X = 0.6;}
+else if (window.innerWidth > 600 && window.innerWidth <= 900){X = 0.4;}
+else {X = 0.35;}
+
+if(window.innerHeight <= X*window.innerWidth + 120) {document.body.style.minHeight=`${X*window.innerWidth + 120}px`;}else{document.body.style.minHeight="100vh";}
+
+}
+
+HeightOfBody();
+
+window.addEventListener("resize",HeightOfBody);
+
+    
 var swiper = new Swiper(".mySwiper", {
 
 spaceBetween:0,
