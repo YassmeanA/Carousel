@@ -24,13 +24,12 @@ display:flex;
 align-items:center;
 justify-content:center;
 overflow-x:hidden;
-min-height:100vh;
 background:linear-gradient(to bottom right, #F8EBA6, #FFD8C2);}
 
 .Container{
 position:absolute;
 width:100vw;
-height:111vw;
+height:calc(var(--i) + 120px);
 display:flex;
 overflow:hidden;
 align-items:center;
@@ -49,6 +48,7 @@ justify-content: center;}
 .swiper-wrapper {
 padding:60px 0;
 display:flex;
+width:100vw;
 height:100%;
 align-items:center;
 list-style:none;}
@@ -139,6 +139,7 @@ opacity:1;}
 .swiper-pagination-bullet {
 height:15px;
 width:15px;
+cursor:pointer;
 background-color:white;
 opacity:0.5;
 box-shadow: 0 5px 5px rgba(0, 0, 0, 0.03);
@@ -149,6 +150,9 @@ transform:scale(0.6);}
 .controls{
 width:calc(100vw - 10px);}
 
+.Container {
+--i:30vw;}
+    
 .swiper-slide{
 width:calc((100vw - 120px)/3);
 height:30vw;}
@@ -176,6 +180,9 @@ text-shadow:3px 3px 5px rgba(0,0,0,0.2);}
 .controls{
 width:calc(100vw - 10px);}
 
+.Container {
+--i:40vw;}
+    
 .swiper-slide{
 width:calc((100vw - 90px)/2);
 height:40vw;}
@@ -203,6 +210,9 @@ text-shadow:3px 3px 5px rgba(0,0,0,0.2);}
 .controls{
 width:calc((100vw - 60px) + 50px);}
 
+.Container {
+--i:70vw;}
+    
 .swiper-slide{
 width:calc(100vw - 60px);
 height:70vw;}
@@ -231,6 +241,9 @@ text-shadow:3px 3px 5px rgba(0,0,0,0.2);}
 .controls{
 width:calc((100vw - 60px) + 50px);}
 
+.Container {
+--i:70vw;}
+    
 .swiper-slide{
 width:calc(100vw - 60px);
 height:70vw;}
@@ -395,6 +408,24 @@ text-shadow:3px 3px 5px rgba(0,0,0,0.2);}
 
 const wrapper = document.querySelector(".swiper");
 
+let X;
+
+function HeightOfBody() {
+
+if(window.innerWidth <= 400){X = 0.7}
+else if (window.innerWidth > 400 && window.innerWidth <= 600){X = 0.7;}
+else if (window.innerWidth > 600 && window.innerWidth <= 900){X = 0.4;}
+else {X = 0.3;}
+
+if(window.innerHeight <= X*window.innerWidth + 120) {document.body.style.minHeight=`${X*window.innerWidth + 120}px`;}else{document.body.style.minHeight="100vh";}
+
+}
+
+HeightOfBody();
+
+window.addEventListener("resize",HeightOfBody);
+    
+    
 var swiper = new Swiper(".swiper-container", {
 
 spaceBetween:0,
