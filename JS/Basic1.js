@@ -125,7 +125,14 @@ function createDots() {
 
 function updateDots() {
   const totalDotCount = Math.ceil(Slides.length / slidesInView);
-  const activeGroupIndex = Math.floor(currentIndex / slidesInView);
+  const maxIndex = Slides.length - slidesInView;
+
+  let activeGroupIndex = Math.round(carousel.scrollLeft / firstCardWidth / slidesInView);
+
+  // Edge case: if we're at the very end, always show the last dot as active
+  if (carousel.scrollLeft >= maxScrollLeft - firstCardWidth / 2) {
+    activeGroupIndex = totalDotCount - 1;
+  }
 
   document.querySelectorAll(".dot").forEach((dot, idx) => {
     dot.classList.toggle("active", idx === activeGroupIndex);
@@ -227,5 +234,3 @@ function resetAutoplayDelay() {
 }
 
 resetAutoplayDelay();
-
-  
