@@ -5,6 +5,7 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="SVG/Focus.svg">
 <title>Circular</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,24 +15,25 @@
 <style>
 
 html {
--webkit-tap-highlight-color: transparent;
-scroll-behavior:smooth;}
+-webkit-tap-highlight-color:transparent;
+scroll-behavior:smooth;
+user-select:none;}
 
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-font-family: "Montserrat Alternates", serif;
-font-weight: 1000;
-font-style: normal;}
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Montserrat Alternates", serif;
+font-weight:1000;
+font-style:normal;}
 
 body {
-display: flex;
-align-items: center;
+display:flex;
+align-items:center;
 justify-content:center;
-min-height: 100vh;
+min-height:100vh;
 overflow-x:hidden;
-overflow-y: auto;
+overflow-y:auto;
 background:#ffd4e4;}
 
 .Container {
@@ -39,12 +41,12 @@ width:100vw;
 top:0;
 position:absolute;
 overflow:hidden;
-display: flex;
-align-items: center;
+display:flex;
+align-items:center;
 justify-content:center;}
 
-#Background{
-position: absolute;
+#Background {
+position:absolute;
 background:#ffd4e4;
 overflow:hidden;}
 
@@ -59,8 +61,8 @@ transition:0.8s;}
 img.Active {
 opacity:1;}
 
-.wrapper{
-position: absolute;
+.wrapper {
+position:absolute;
 right:-112.5px;
 width:225px;
 height:225px;
@@ -72,17 +74,17 @@ justify-content:center;
 transform:scale(1.5);}
 
 .carousel {
-position: absolute;
+position:absolute;
 width:200px;
 height:200px;
-animation: R 30s linear forwards infinite;}
+animation:Rotate 30s linear forwards infinite;}
 
-.C{
-pointer-events:none;
-position: absolute;
-border-radius:50%;
+.C {
+position:absolute;
 width:200px;
 height:200px;
+border-radius:50%;
+pointer-events:none;
 transform:var(--i1);}
 
 .wrapper section{
@@ -99,7 +101,7 @@ background-size:cover;
 background-position:center;
 clip-path:path("M35.3044 1.64962C36.5736 0.584621 38.4699 0.747688 39.4964 2.04828C51.3116 17.0188 58.6 35.0584 60.5003 54.0349C60.6654 55.6835 59.4146 57.1181 57.7618 57.2336L13.8689 60.3029C12.2161 60.4185 10.7918 59.1704 10.5774 57.5275C9.47491 49.0819 6.23239 41.0564 1.15863 34.2153C0.171631 32.8845 0.329193 30.9973 1.59842 29.9323L35.3044 1.64962Z");}
 
-.wrapper section.active{
+.wrapper section.active {
 pointer-events:none;
 top:36px;
 right:-4px;
@@ -107,44 +109,74 @@ transform:scale(1.25);}
 
 #Title1 {
 width:100%;
-font-size:1.5rem;
+font-size:1.7rem;
 font-weight:1000;
 color:#ff3884;
 text-shadow:1px 2px 3px rgba(0,0,0,0.1);}
 
 #Title2 {
 width:100%;
-font-size:1.5rem;
+font-size:1.7rem;
 font-weight:1000;
 color:#ff3884;
 text-shadow:1px 2px 3px rgba(0,0,0,0.1);}
 
-#W{
+#W {
 position:fixed;
 top:0;
 left:0;
 height:100%;
 width:100%;}
 
-@keyframes R {
-0%{transform: rotate(0deg);}
-100%{transform: rotate(360deg);}}
+@keyframes Rotate {
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}}
 
 
-@media screen and (max-height:500px) {
+@media screen and (max-height:660px) and (max-width:500px) {
 
 .Container {
-height:700px;}
+height:660px;}
 
 }
 
-@media screen and (min-height:500px) {
+@media screen and (min-height:660px) and (max-width:500px) {
 
 .Container {
 height:100vh;}
 
 }
 
+@media screen and (max-height:780px) and (min-width:501px) and (max-width:900px)  {
+
+.Container {
+height:calc(65vw + 250px);}
+
+}
+
+@media screen and (min-height:780px) and (min-width:501px) and (max-width:900px)  {
+
+.Container {
+height:100vh;}
+
+}
+
+@media screen and (max-height:500px) and (min-width:901px) {
+
+.Container {
+height:500px;}
+
+}
+
+@media screen and (min-height:500px) and (min-width:901px) {
+
+.Container {
+height:100vh;}
+
+.wrapper {
+top:137.5px;}
+
+}
 
 @media screen and (max-width:500px) {
 
@@ -160,72 +192,70 @@ height:70%;
 -webkit-mask-image: linear-gradient(to bottom, black 0%, black 40%, transparent 90%);}
 
 #Title {
-width:60vw;
+width:100vw;
 position:absolute;
 top:55%;
-left: 0;
+left:0;
 margin:25px;
 --i1:55%;}
 
 #text {
 width:40vw;
 position:absolute;
-top:calc(55% + 90px);
+top:calc(55% + 80px);
 left:0;
 margin:25px;
-font-size:1rem;
+font-size:1.1rem;
 font-weight:400;
---i2:calc(55% + 90px);}
+--i2:calc(55% + 80px);}
 
-.wrapper{
+.wrapper {
 top:55%;}
 
 }
 
 
-@media screen and (min-width:501px) {
+@media screen and (min-width:501px) and (max-width:900px) {
 
 #Background {
 position:absolute;
-left: 5vw;
+left:5vw;
 top:5vw;
 width:50vw;
 height:55vw;
 border-radius:30px;
-overflow: hidden;
-box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);}
+overflow:hidden;
+box-shadow:10px 10px 20px rgba(0, 0, 0, 0.2);}
 
 img {
 height:100%;
 width:100%;}
 
 #Title {
-width:50vw;
+width:100vw;
 position:absolute;
 top:65vw;
 left:5vw;
 margin:15px;
 --i1:65vw;}
 
-#Title1, #Title2{
+#Title1, #Title2 {
 font-size:1.7rem;}
 
 #text {
-width:30vw;
+width:50vw;
 position:absolute;
 top:calc(65vw + 90px);
 left:5vw;
 margin:15px;
-font-size:1rem;
+font-size:1.2rem;
 font-weight:400;
 --i2:calc(65vw + 90px);}
 
 .wrapper {
-transform: scale(2);}
-
+transform:scale(2);}
 
 }
-
 
 @media screen and (min-width:901px) {
 
@@ -236,15 +266,15 @@ top:5vw;
 width:30vw;
 height:35vw;
 border-radius:30px;
-overflow: hidden;
-box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);}
+overflow:hidden;
+box-shadow:10px 10px 20px rgba(0, 0, 0, 0.2);}
 
 img {
 height:100%;
 width:100%;}
 
 #Title {
-width:30vw;
+width:100vw;
 position:absolute;
 top:5vw;
 left:40vw;
@@ -265,7 +295,7 @@ font-weight:400;
 --i2:calc(5vw + 120px);}
 
 .wrapper {
-transform: scale(2);}
+transform:scale(2);}
 
 
 }
@@ -297,7 +327,7 @@ transform: scale(2);}
     <h2 id="Title2">Ice Cream</h2>
 </div>
     
-<span id="text">Strawberry ice cream mixed with small pieces of fresh strawberries</span>
+<span id="text">Strawberry ice cream mixed with small pieces of fresh strawberries.</span>
     
 
 <div id="W"></div>
@@ -317,7 +347,7 @@ transform: scale(2);}
 
 </div>
 
-<script src="JS/Circular.js"></script>
+<script src="Circular.js"></script>
 
 </body>
 
