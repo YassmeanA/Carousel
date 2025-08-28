@@ -24,7 +24,7 @@ display:flex;
 align-items:center;
 justify-content:center;
 overflow-x:hidden;
-background:linear-gradient(to bottom right, #F8EBA6, #FFD8C2);}
+background:linear-gradient(to bottom right, #FFEC8A, #FFB78F);}
 
 .Container {
 position:absolute;
@@ -53,7 +53,7 @@ display:flex;
 align-items:center;
 list-style:none;}
 
-.swiper .controls .next ,.prev{
+.next, .prev {
 position:absolute;
 height:50px;
 width:50px;
@@ -64,17 +64,17 @@ z-index:1;
 box-shadow:0 3px 6px rgba(0, 0, 0, 0.2);
 transition:0.3s ease;}
 
-.controls{
+.controls {
 position:absolute;
 height:50px;}
 
-.controls .next:active,.prev:active{
+.controls .next:active,.prev:active {
 transform:scale(0.85);}
 
-.prev{
+.prev {
 left:0px;}
 
-.next{
+.next {
 right:0px;}
 
 .swiper-slide {
@@ -83,9 +83,9 @@ display:flex;
 overflow:hidden;
 text-align:left;
 border-radius:13px;
-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);}
+box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);}
 
-span i{
+span i {
 color:gold;
 text-shadow:3px 3px 5px rgba(0,0,0,0.2);}
 
@@ -97,25 +97,25 @@ color:white;
 font-weight:600;
 z-index:1;}
 
-img{
+img {
 width:100%;
 height:100%;
 object-fit:cover;
-position: absolute;}
+position:absolute;}
 
 .swiper-slide h2 {
 position:absolute;
 right:0;
 text-align:right;
-font-weight: bold;
+font-weight:bold;
 z-index:1;
 color:white;}
 
 .swiper-slide h3 {
 text-align:left;
-font-weight: 500;
+font-weight:500;
 z-index:1;
-position: absolute;
+position:absolute;
 color:white;}
 
 /* target the active bullet */
@@ -130,13 +130,13 @@ width:12px;
 height:12px;
 border-radius:6px;
 background-color:white;
-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.03);
+box-shadow:0 5px 5px rgba(0, 0, 0, 0.03);
 opacity:0.5;
 cursor:pointer;
 transform:scale(0.6);
-transition: 0.3s ease;}
+transition:0.3s ease;}
 
-.swiper-pagination{
+.swiper-pagination {
 position:absolute;
 bottom:0;
 transform:translateY(-5px);
@@ -146,22 +146,22 @@ justify-content:center;}
 
 @media screen and (min-width: 900px) {
 
-.controls{
+.controls {
 width:calc(40vw + 50px);}
 
 .Container {
 --i:35vw;}
     
-.swiper-slide{
+.swiper-slide {
 width:40vw;
 height:35vw;}
 
-h2{
+h2 {
 font-size:2.5rem;
 padding:15px;
 text-shadow:2px 2px 4px rgba(0,0,0,0.2);}
 
-h3{
+h3 {
 bottom:25px;
 padding:15px;
 font-size:1.5rem;
@@ -172,29 +172,26 @@ font-size:1rem;
 padding:15px;
 text-shadow: 3px 3px 5px rgba(0,0,0,0.2);}
 
-a{
-text-decoration:none;}
-
 }
 
 @media screen and (max-width: 900px) {
 
-.controls{
+.controls {
 width:calc(50vw + 50px);}
 
 .Container {
 --i:40vw;}
                            
-.swiper-slide{
+.swiper-slide {
 width:50vw;
 height:40vw;}
 
-h2{
+h2 {
 padding:10px;
 font-size:2rem;
 text-shadow:2px 2px 4px rgba(0,0,0,0.2);}
 
-h3{
+h3 {
 bottom:23px;
 padding:10px;
 font-size:1rem;
@@ -209,22 +206,22 @@ text-shadow:3px 3px 5px rgba(0,0,0,0.2);}
 
 @media screen and (max-width: 600px) {
 
-.controls{
+.controls {
 width:calc(70vw + 50px);}
 
 .Container {
 --i:60vw;}
     
-.swiper-slide{
+.swiper-slide {
 width:70vw;
 height:60vw;}
 
-h2{
+h2 {
 padding:15px;
 font-size:2rem;
 text-shadow:2px 2px 4px rgba(0,0,0,0.2);}
 
-h3{
+h3 {
 bottom:20px;
 padding:15px;
 font-size:1.2rem;
@@ -239,22 +236,22 @@ text-shadow:3px 3px 5px rgba(0,0,0,0.2);}
 
 @media screen and (max-width: 400px) {
 
-.controls{
+.controls {
 width:calc(80vw + 50px);}
 
 .Container {
 --i:70vw;}
     
-.swiper-slide{
+.swiper-slide {
 width:80vw;
 height:70vw;}
 
-h2{
+h2 {
 padding:10px;
 font-size: 2rem;
 text-shadow:2px 2px 4px rgba(0,0,0,0.2);}
 
-h3{
+h3 {
 bottom:20px;
 padding:10px;
 font-size:1rem;
