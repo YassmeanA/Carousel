@@ -14,9 +14,9 @@ html {
 scroll-behavior:smooth;}
 
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;}
+margin:0;
+padding:0;
+box-sizing:border-box;}
 
 body {
 font-family:Sans-serif;
@@ -24,9 +24,9 @@ display:flex;
 align-items:center;
 justify-content:center;
 overflow-x:hidden;
-background:linear-gradient(to bottom right, #F8EBA6, #FFD8C2);}
+background:linear-gradient(to bottom right, #FFEC8A, #FFB78F);}
 
-.Container{
+.Container {
 position:absolute;
 width:100vw;
 height:calc(var(--i) + 120px);
@@ -42,8 +42,8 @@ max-width:1100px;
 width:100vw;
 height:100%;
 display:flex;
-align-items: center;
-justify-content: center;}
+align-items:center;
+justify-content:center;}
 
 .swiper-wrapper {
 padding:60px 0;
@@ -53,7 +53,7 @@ height:100%;
 align-items:center;
 list-style:none;}
 
-.swiper-container .controls .swiper-button-prev,.swiper-container .controls .swiper-button-next{
+.swiper-container .controls .swiper-button-prev,.swiper-container .controls .swiper-button-next {
 position:absolute;
 height:50px;
 width:50px;
@@ -65,20 +65,20 @@ z-index:1;
 box-shadow:0 3px 6px rgba(0, 0, 0, 0.2);
 transition:0.3s ease;}
 
-.controls{
+.controls {
 position:absolute;
 height:50px;}
 
-.controls .swiper-button-prev:active,.swiper-button-next:active{
+.controls .swiper-button-prev:active,.swiper-button-next:active {
 transform:scale(0.85);}
 
 .swiper-button-next::after, .swiper-button-prev::after {
 content: "";}
 
-.swiper-button-prev{
+.swiper-button-prev {
 left:0px;}
 
-.swiper-button-next{
+.swiper-button-next {
 right:0px;}
 
 .disabled_swiper_button {
@@ -91,40 +91,40 @@ overflow: hidden;
 text-align:left;
 border-radius:13px;
 margin-left: 30px;
-box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.4);}
+box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);}
 
-.swiper-slide:last-child{
+.swiper-slide:last-child {
 margin-right:30px;}
 
-span i{
+span i {
 color:gold;
 text-shadow:3px 3px 5px rgba(0,0,0,0.2);}
 
 .swiper-slide span {
-position: absolute;
-bottom:0px;
-left:0px;
+position:absolute;
+bottom:0;
+left:0;
 color:white;
 font-weight:600;
 z-index:1;}
 
-img{
+img {
 width:100%;
 height:100%;
 object-fit:cover;
-position: absolute;}
+position:absolute;}
 
 .swiper-slide h2 {
 text-align:right;
-font-weight: bold;
+font-weight:bold;
 z-index:1;
 color:white;}
 
 .swiper-slide h3 {
 text-align:left;
-font-weight: 500;
+font-weight:500;
 z-index:1;
-position: absolute;
+position:absolute;
 color:white;}
 
 .swiper-pagination {
@@ -142,27 +142,27 @@ width:15px;
 cursor:pointer;
 background-color:white;
 opacity:0.5;
-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.03);
+box-shadow:0 5px 5px rgba(0, 0, 0, 0.03);
 transform:scale(0.6);}
 
 @media screen and (min-width: 901px) {
 
-.controls{
+.controls {
 width:calc(100vw - 10px);}
 
 .Container {
 --i:30vw;}
     
-.swiper-slide{
+.swiper-slide {
 width:calc((100vw - 120px)/3);
 height:30vw;}
 
-h2{
+h2 {
 font-size:2.2rem;
 padding:15px;
 text-shadow:2px 2px 4px rgba(0,0,0,0.2);}
 
-h3{
+h3 {
 bottom:25px;
 padding:15px;
 font-size:1.4rem;
@@ -177,22 +177,22 @@ text-shadow:3px 3px 5px rgba(0,0,0,0.2);}
 
 @media screen and (max-width:900px) {
 
-.controls{
+.controls {
 width:calc(100vw - 10px);}
 
 .Container {
 --i:40vw;}
     
-.swiper-slide{
+.swiper-slide {
 width:calc((100vw - 90px)/2);
 height:40vw;}
 
-h2{
+h2 {
 font-size:2rem;
 padding:15px;
 text-shadow:2px 2px 4px rgba(0,0,0,0.2);}
 
-h3{
+h3 {
 bottom:25px;
 padding:15px;
 font-size:1.2rem;
@@ -207,22 +207,22 @@ text-shadow:3px 3px 5px rgba(0,0,0,0.2);}
 
 @media screen and (max-width: 600px) {
 
-.controls{
+.controls {
 width:calc((100vw - 60px) + 50px);}
 
 .Container {
 --i:70vw;}
     
-.swiper-slide{
+.swiper-slide {
 width:calc(100vw - 60px);
 height:70vw;}
 
-h2{
+h2 {
 padding:15px;
 font-size:3rem;
 text-shadow:2px 2px 4px rgba(0,0,0,0.2);}
 
-h3{
+h3 {
 bottom:30px;
 padding:20px;
 font-size:1.8rem;
@@ -238,22 +238,22 @@ text-shadow:3px 3px 5px rgba(0,0,0,0.2);}
 
 @media screen and (max-width: 400px) {
 
-.controls{
+.controls {
 width:calc((100vw - 60px) + 50px);}
 
 .Container {
 --i:70vw;}
     
-.swiper-slide{
+.swiper-slide {
 width:calc(100vw - 60px);
 height:70vw;}
 
-h2{
+h2 {
 padding:10px;
 font-size:2rem;
 text-shadow:2px 2px 4px rgba(0,0,0,0.2);}
 
-h3{
+h3 {
 bottom:20px;
 padding:10px;
 font-size:1rem;
